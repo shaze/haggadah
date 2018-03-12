@@ -1,7 +1,22 @@
 \documentclass[12pt]{report}
 
-\usepackage[a5paper]{geometry}
+\usepackage[a4paper]{geometry}
 \usepackage{graphicx}
+
+\usepackage{xltxtra}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+\usepackage{charter}
+
+\usepackage{polyglossia}
+
+
+\setdefaultlanguage{english}
+\setotherlanguage[numerals=hebrew]{hebrew}
+
+\newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
+\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+
+
 \title{Haggadah}
 \author{Seder for the family}
 
@@ -11,18 +26,24 @@
 \section*{Kiddush}
 
 \begin{tabular}{r}
-\includegraphics[width=4cm]{figs/0A010-vayehi}\\
-\includegraphics[scale=1,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
+\includegraphics[width=6cm]{figs/0A010-vayehi}\\
+\includegraphics[scale=1.5,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
 \end{tabular}
 
 
 \newpage
 \begin{tabular}{r}
-\includegraphics[width=6cm]{figs/0A020-kiddush1}\\
-\includegraphics[width=6cm]{figs/0A024-kiddush2}\\
+\includegraphics[width=9cm]{figs/0A020-kiddush1}\\
+\includegraphics[width=9cm]{figs/0A024-kiddush2}\\
 \end{tabular}
 
-\includegraphics[scale=0.6]{figs/0A027-shehecheyanu}
+\newpage
+\paragraph*{Shehecheyanu}
+
+\begin{HgHebrew}
+ בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+ שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמָן הַזֶּה.
+\end{HgHebrew}
 
 
 \end{document}
