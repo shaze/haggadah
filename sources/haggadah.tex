@@ -1,7 +1,7 @@
 \documentclass[a4paper,12pt,openany]{memoir}
 
-\usepackage{xltxtra}
-\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+%\usepackage{xltxtra}
+%\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \usepackage{charter}
 %\usepackage[urw-garamond]{mathdesign}
 %\usepackage[bitstream-charter]{mathdesign}
@@ -14,11 +14,14 @@
 \usepackage{setspace}
 \usepackage{multicol}
 
-
 \usepackage{polyglossia}
+\usepackage{fontspec}
 
 \setdefaultlanguage{english}
+
 \setotherlanguage[numerals=hebrew]{hebrew}
+
+\fontspec [Path = /Users/scott/Library/Fonts/culmus-0.132/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
 
 \newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
 
