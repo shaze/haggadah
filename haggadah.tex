@@ -1,23 +1,15 @@
 \documentclass[a4paper,12pt,openany]{memoir}
 
-%\usepackage{xltxtra}
-%\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \usepackage{charter}
-%\usepackage[urw-garamond]{mathdesign}
-%\usepackage[bitstream-charter]{mathdesign}
-%\usepackage[tpagella]{mathdesign}
-%\usepackage{ucs}
-%\usepackage[utf8x]{inputenc}  % adding the UTF-8 encoding
-%\usepackage{culmus}
-%\usepackage[HE8,OT1]{fontenc}
-%\usepackage[english,hebrew]{babel}
 \usepackage{setspace}
 \usepackage{multicol}
 
 \usepackage{polyglossia}
 \usepackage{fontspec}
-
+\usepackage{url}
 \usepackage{titlesec}
+
+
 \titleformat{\chapter}[display]
 {\normalfont%
     \Large% %change this size to your needs for the first line
@@ -29,27 +21,26 @@
 
 \setotherlanguage[numerals=hebrew]{hebrew}
 
-%/Users/scott/Library/Fonts/culmus/
 \fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
 
 \newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
 
 \setlength{\beforechapskip}{0cm}
+
 \newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
-\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
-\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
 \newcommand{\HgHL}[1]{{\large\textbf{#1}\par\noindent\\[-.5em]}}
 \newcommand{\HgFill}{\vfill \hrule \vfill}
-
-\newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
-\newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
 \newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
 \newcommand{\LSrc}{\textsuperscript{\upshape{[L]}}}
-
 \newcommand{\cH}{CH}
 \newcommand{\ch}{ch}
 %\d{H}
+
+\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
+\newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
+\newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
 \newenvironment{myitemize}[0]{%
         \protect\begin{itemize}%
         \vspace*{-2mm}%
@@ -69,15 +60,46 @@
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{enumerate}}
 
-\title{Haggadah}
-\author{Seder for the perplexed family}
-
+\title{\vspace*{-2cm}\Huge Haggadah}
+\author{\huge Seder for the perplexed and perplexing family}
+\date{\Large Pesach, 5778}
 \begin{document}
 \frontmatter
 \pagenumbering{roman}
 \maketitle
+
+\noindent\hspace*{-5cm}
+\includegraphics[width=23cm]{figs/matzo.jpg}
 \thispagestyle{empty}
 
+\newpage
+
+\thispagestyle{empty}
+
+
+\vfill\phantom{Hello}\vfill
+
+\paragraph*{Acknowledgments}
+
+\begin{itemize}
+\item Major  source material for this haggadah was the {\LaTeX}
+  source of the The Columbia Commune Churchill Free Haggadah
+  \url{https://github.com/jacobandreas/haggadah}, which had been
+  placed in the public domain.
+\item The photo on the
+  front cover is by Yoninah (Own work) [GFDL
+  (\url{http://www.gnu.org/copyleft/fdl.html}), CC-BY-SA-3.0
+  (\url{http://creativecommons.org/licenses/by-sa/3.0/}) or CC BY 2.5
+  (\url{http://creativecommons.org/licenses/by/2.5)}], via Wikimedia
+  Commons
+\end{itemize}
+
+\vfill
+\noindent
+This  haggadah is produced in {\LaTeX} (xetex). The English text is
+set in Charter. The Hebrew text is set in Shofar.
+\vfill
+\newpage
 
 \chapter{The Passover seder}
 
@@ -158,6 +180,7 @@ On Shabbat
 
 
 \newpage
+
 \paragraph*{Shehecheyanu}
 
 \begin{HgHebrew}
@@ -198,7 +221,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
   The green vegetable represents rebirth, renewal and growth. The salt
   water represents the tears we shed when we were slaves in Egypt. The
   karpas is usually a fresh vegetable like parsley, watercress or
-  celery, though there are other cusoms.
+  celery, though there are other customs.
 \end{HgEnglish}
 
 \vfill
@@ -415,7 +438,7 @@ The Egyptians treated us badly. They acted cunningly against us. They
 set taskmasters over us to make us suffer with burdens, and we built
 storage cities for Pharaoh, Pitom and Ramses.'
 
-They afflicte us. As it is said: ``The Egyptians made the children of Israel work with rigor. And they made their lives bitter with hard work, with mortar and with bricks and all manner of service in the field, all their work which they made them work with rigor.''
+They afflicted us. As it is said: ``The Egyptians made the children of Israel work with rigour. And they made their lives bitter with hard work, with mortar and with bricks and all manner of service in the field, all their work which they made them work with rigour.''
 \end{HgEnglish}
 
 \HgInst{Continue}
@@ -570,7 +593,7 @@ matzah, and the maror.
 
 \HgInst{Finally, hold up the wine, and read:}
 
-\begin{multicols}{3}
+\begin{multicols}{3}\raggedright
 \begin{HgHebrew} \raggedright
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
@@ -578,7 +601,7 @@ matzah, and the maror.
 \end{HgHebrew}
 
 \columnbreak
-\begin{HgTranslit}
+\begin{HgTranslit}\raggedright
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.\\
 \phantom{extra line}
@@ -586,7 +609,7 @@ matzah, and the maror.
 
 \columnbreak
 
-\begin{HgEnglish}
+\begin{HgEnglish}\raggedright
   Blessed are you, Adonai, Sovereign of the Universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
@@ -714,7 +737,7 @@ the table. Continuing to hold only those pieces, read:}
 \vfill
 
 \HgInst{Take a spoonful of maror. Dip it in the {\ch}aroset, then shake the
-{\ch}aroset off. Now recite:}
+{\ch}aroset off (if needed, depending on what is used for the maror). Now recite:}
 
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
@@ -775,8 +798,8 @@ group.  This should be the last thing you eat tonight.}
 \vfill
 
 \begin{HgEnglish}
-In most families, it is customary to hide the matzah during {\bfseries
-ya{\ch}atz}. At this point in the evening the children search for the matzah,
+In most families, it is customary to hide the matzah during 
+yachatz. At this point in the evening the children search for the matzah,
 and a prize is awarded to the one who finds it.
 
 Traditionally, it's even less straightforward. The seder cannot proceed until
@@ -901,10 +924,10 @@ matzah to extort a gift of her choosing from the adults.
   מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
 \end{HgHebrewl}
 
-\begin{HgTranslit}
-  Yishtaba{\ch} shim{\ch}a l'ad malkeinu \\
+\begin{HgTranslit}\raggedright
+  Yishtaba{\ch} shim{\ch}a laad malkeinu \\
   ha'el hamele{\ch} hagadol v'hakadosh bashamayim u'v'aretz \\
-  ki l'{\ch}a na'eh, Adonai eloheinu v'elohei avoteinu \\
+  ki l'{\ch}a na'eh, Adonai eloheinu v'elohei avoteinu v'imoteinu\\
   shir u'sh'va{\ch}a, hallel u'v'zimrah, oz u'memshalah, netzah, \\
   g'dulah u'g'vurah, t'hilah v'tiferet, k'dushah umal{\ch}ut, \\
   bra{\ch}ot v'hoda'ot me'atah v'ad olam. \\
@@ -946,7 +969,8 @@ matzah to extort a gift of her choosing from the adults.
   Blessed are you, Lord our God, ruler of the universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
-\vspace{-1em}
+
+
 
 \HgInst{Drink the fourth cup.}
 
@@ -971,6 +995,8 @@ Still, we would not suffice \\
 \HgEllipsis 
 \end{verse}
 \HgSource{Nishmat Kol {\ch}ai}
+
+\appendix
 
 \end{document}
 
