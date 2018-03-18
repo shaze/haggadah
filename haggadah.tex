@@ -1,7 +1,11 @@
 \documentclass[a4paper,12pt,openany]{memoir}
 
+\usepackage{transparent}
+\usepackage{eso-pic}
+
 %\usepackage{xltxtra}
 %\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
+%\usepackage{wallpaper}
 \usepackage{charter}
 %\usepackage[urw-garamond]{mathdesign}
 %\usepackage[bitstream-charter]{mathdesign}
@@ -47,8 +51,9 @@
 \newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
 \newcommand{\LSrc}{\textsuperscript{\upshape{[L]}}}
 
-\newcommand{\cH}{CH}
+\newcommand{\cH}{Ch}
 \newcommand{\ch}{ch}
+
 %\d{H}
 \newenvironment{myitemize}[0]{%
         \protect\begin{itemize}%
@@ -69,13 +74,26 @@
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{enumerate}}
 
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+{ \includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{stock.jpg}}%
+\vfill
+}}}
 \title{Haggadah}
-\author{Seder for the perplexed family}
-
+\author{Seder for the perplexed and perplexing family}
+\date{Pesach, 5778}
 \begin{document}
+\AddToShipoutPicture*{\BackgroundPic}
 \frontmatter
 \pagenumbering{roman}
 \maketitle
+
+
+%\ThisTileSquareWallPaper{6}{stock.jpg}
 \thispagestyle{empty}
 
 
