@@ -1,21 +1,15 @@
 \documentclass[a4paper,12pt,openany]{memoir}
 
-%\usepackage{xltxtra}
-%\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
-\usepackage{charter}
-%\usepackage[urw-garamond]{mathdesign}
-%\usepackage[bitstream-charter]{mathdesign}
-%\usepackage[tpagella]{mathdesign}
-%\usepackage{ucs}
-%\usepackage[utf8x]{inputenc}  % adding the UTF-8 encoding
-%\usepackage{culmus}
-%\usepackage[HE8,OT1]{fontenc}
-%\usepackage[english,hebrew]{babel}
 \usepackage{setspace}
 \usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[pagecolor=none]{pagecolor}
 
 \usepackage{polyglossia}
 \usepackage{fontspec}
+\usepackage{url}
+\usepackage{titlesec}
+
 
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -29,27 +23,72 @@
 
 \setotherlanguage[numerals=hebrew]{hebrew}
 
-%/Users/scott/Library/Fonts/culmus/
 \fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
+\fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *-Regular,  BoldFont      = *-Bold]{HadasimCLM}
+\fontspec[Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/, 
+UprightFont = *-Regular,
+BoldFont = *-Bold,
+ItalicFont = *-Italic ]{Carlito}
 
-\newfontfamily\hebrewfont[Script=Hebrew]{Shofar}
+
+\newfontfamily\hebrewfont[Script=Hebrew]{Hadasim CLM}
+%
+%\setmainfont{Carlito}[%
+% Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/ ,% 
+% UprightFont = *-Regular,
+% BoldFont = *-Bold,
+% ItalicFont = *-Italic ]
+
+% \setmainfont[%
+%  Path = /Users/scott/Library/Fonts/cabin/ ,% 
+%  UprightFont = Cabin-Regular.otf,
+%  BoldFont = *-Bold,
+%  ItalicFont = *-RegularItalic ]{Cabin}
+
+\setmainfont[ Path =
+/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
+%\setmainfont[ Path =
+%/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/]{Cormorant Garamond}
+\setmainfont[ Path =
+/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/raleway/ ,
+ UprightFont = Raleway-Regular.otf,
+ BoldFont = Raleway-Bold,
+ ItalicFont = Raleway-Regular-Italic ] {Raleway}
+\setmainfont[ Path =
+/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/ ,
+ UprightFont = CormorantGaramond-Regular.otf,
+ BoldFont = CormorantGaramond-Bold,
+ ItalicFont = CormorantGaramond-RegularItalic ] {Cormorant Garamond}
+%\setmainfont{Georgia}
+
+
+%\setmainfont{Palatino}
+
+\titleformat{\chapter}[display]
+{\normalfont%
+    \Large% %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+    \Large %change this size to your needs for the second line
+    }
+
 
 \setlength{\beforechapskip}{0cm}
+
 \newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
-\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
-\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
 \newcommand{\HgHL}[1]{{\large\textbf{#1}\par\noindent\\[-.5em]}}
 \newcommand{\HgFill}{\vfill \hrule \vfill}
-
-\newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
-\newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
 \newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
 \newcommand{\LSrc}{\textsuperscript{\upshape{[L]}}}
-
-\newcommand{\cH}{CH}
+\newcommand{\cH}{Ch}
 \newcommand{\ch}{ch}
 %\d{H}
+
+
+\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
+\newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
+\newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
 \newenvironment{myitemize}[0]{%
         \protect\begin{itemize}%
         \vspace*{-2mm}%
@@ -69,14 +108,60 @@
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{enumerate}}
 
-\title{Haggadah}
-\author{Seder for the perplexed family}
+\title{\vspace*{-2cm}\Huge Haggadah}
 
+\author{\huge Seder for the perplexed \&  perplexing family}
+\date{\Large Pesach, 5778}
 \begin{document}
 \frontmatter
+\newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
 \pagenumbering{roman}
 \maketitle
 \thispagestyle{empty}
+
+
+
+\noindent\hspace*{-5cm}
+\includegraphics[width=232mm]{figs/matzo.jpg}
+\thispagestyle{empty}
+
+%\newpage
+
+
+\newpage
+
+\phantom{Deliberately blank}
+\thispagestyle{empty}
+
+\newpage
+\setcounter{page}{1}
+\maketitle
+
+\newpage
+\vfill\phantom{Hello}\vfill
+
+\vfill
+\paragraph*{Acknowledgments}
+
+\begin{itemize}
+\item Major  source material for this haggadah was the {\LaTeX}
+  source of the The Columbia Commune Churchill Free Haggadah
+  \url{https://github.com/jacobandreas/haggadah}, which had been
+  placed in the public domain.
+\item The photo on the
+  front cover is by Yoninah (Own work) [GFDL
+  (\url{http://www.gnu.org/copyleft/fdl.html}), CC-BY-SA-3.0
+  (\url{http://creativecommons.org/licenses/by-sa/3.0/}) or CC BY 2.5
+  (\url{http://creativecommons.org/licenses/by/2.5)}], via Wikimedia
+  Commons
+\end{itemize}
+
+\vfill
+\noindent
+This  haggadah is produced in {\XeLaTeX}. The English text is
+set in Charter. The Hebrew text is set in Shofar.
+
+\newpage
 
 
 \chapter{The Passover seder}
@@ -152,12 +237,13 @@ On Shabbat
 \HgInst{Pour the first cup of wine, and read:}
 
 \begin{tabular}{r}
-\includegraphics[width=9cm]{figs/0A020-kiddush1}\\
+\includegraphics[width=9cm,trim=0 16mm 0 0]{figs/0A020-kiddush1}\\
 \includegraphics[width=9cm]{figs/0A024-kiddush2}\\
 \end{tabular}
 
 
 \newpage
+
 \paragraph*{Shehecheyanu}
 
 \begin{HgHebrew}
@@ -194,11 +280,11 @@ for giving us life, sustaining us, and enabling us to reach this season.
 
 \chapter{Karpas: The green vegetable}
 
-\begin{HgEnglish}
+\begin{HgEnglish}\raggedright
   The green vegetable represents rebirth, renewal and growth. The salt
   water represents the tears we shed when we were slaves in Egypt. The
   karpas is usually a fresh vegetable like parsley, watercress or
-  celery, though there are other cusoms.
+  celery, though there are other customs.
 \end{HgEnglish}
 
 \vfill
@@ -415,7 +501,7 @@ The Egyptians treated us badly. They acted cunningly against us. They
 set taskmasters over us to make us suffer with burdens, and we built
 storage cities for Pharaoh, Pitom and Ramses.'
 
-They afflicte us. As it is said: ``The Egyptians made the children of Israel work with rigor. And they made their lives bitter with hard work, with mortar and with bricks and all manner of service in the field, all their work which they made them work with rigor.''
+They afflicted us. As it is said: ``The Egyptians made the children of Israel work with rigour. And they made their lives bitter with hard work, with mortar and with bricks and all manner of service in the field, all their work which they made them work with rigour.''
 \end{HgEnglish}
 
 \HgInst{Continue}
@@ -570,7 +656,7 @@ matzah, and the maror.
 
 \HgInst{Finally, hold up the wine, and read:}
 
-\begin{multicols}{3}
+\begin{multicols}{3}\raggedright
 \begin{HgHebrew} \raggedright
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
@@ -578,7 +664,7 @@ matzah, and the maror.
 \end{HgHebrew}
 
 \columnbreak
-\begin{HgTranslit}
+\begin{HgTranslit}\raggedright
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.\\
 \phantom{extra line}
@@ -586,7 +672,7 @@ matzah, and the maror.
 
 \columnbreak
 
-\begin{HgEnglish}
+\begin{HgEnglish}\raggedright
   Blessed are you, Adonai, Sovereign of the Universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
@@ -695,18 +781,18 @@ the table. Continuing to hold only those pieces, read:}
   our own people.'' 
 \end{HgEnglish}
 
-\begin{HgEnglish}
-  It is a Torah mitzvah to eat matzah on Seder night.  Jewish law defines an act
-  of ``eating'' as swallowing a kezayit within two to four minutes (kiday
-  achilat pras). If this is difficult, you may sip some water while eating. At
-  the very least, the matzah must be consumed within nine minutes.  The time
-  begins not with the first bite, but with the first swallow.  Therefore, you
-  can gain some extra time by chewing up some matzah before taking the first
-  swallow.  A kezayit is approximately 45-50 cc, which is roughly two thirds of
-  a square matzah, or one half of the hand-made round matzah.
+% \begin{HgEnglish}
+%   It is a Torah mitzvah to eat matzah on Seder night.  Jewish law defines an act
+%   of ``eating'' as swallowing a kezayit within two to four minutes (kiday
+%   achilat pras). If this is difficult, you may sip some water while eating. At
+%   the very least, the matzah must be consumed within nine minutes.  The time
+%   begins not with the first bite, but with the first swallow.  Therefore, you
+%   can gain some extra time by chewing up some matzah before taking the first
+%   swallow.  A kezayit is approximately 45-50 cc, which is roughly two thirds of
+%   a square matzah, or one half of the hand-made round matzah.
 
-  \HgSource{Aish HaTorah}
-\end{HgEnglish}
+%   \HgSource{Aish HaTorah}
+% \end{HgEnglish}
 
 \newpage
 \chapter{Maror: Blessing the bitter herb \\
@@ -714,7 +800,8 @@ the table. Continuing to hold only those pieces, read:}
 \vfill
 
 \HgInst{Take a spoonful of maror. Dip it in the {\ch}aroset, then shake the
-{\ch}aroset off. Now recite:}
+{\ch}aroset off (if needed, depending on what is used for the maror). Now recite:}
+
 
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
@@ -751,13 +838,17 @@ the table. Continuing to hold only those pieces, read:}
 \chapter{Shul{\ch}an Orei{\ch}: Eating}
 \vfill
 \begin{center}
-  \fontsize{32pt}{32pt}
+  \fontsize{24pt}{24pt}
   \selectfont
   The
   meal
   is 
   served.
 \end{center}
+
+\vfill
+
+The meal is traditionally started with egg and salt water.
 \vfill
 
 \newpage
@@ -775,23 +866,19 @@ group.  This should be the last thing you eat tonight.}
 \vfill
 
 \begin{HgEnglish}
-In most families, it is customary to hide the matzah during {\bfseries
-ya{\ch}atz}. At this point in the evening the children search for the matzah,
+\textbf{Background ---} In most families, it is customary to hide the matzah during 
+yachatz. At this point in the evening the children search for the matzah,
 and a prize is awarded to the one who finds it.
 
 Traditionally, it's even less straightforward. The seder cannot proceed until
 the afikoman has been eaten, and so the child who holds it finds herself with an
 excelleng bargaining token. Rather than simply being given a prize, she uses the
 matzah to extort a gift of her choosing from the adults.
-\end{HgEnglish}
 
-
-
-\begin{HgEnglish}
-  The structure of the Passover seder appears to be
-  modelled, at least in part, after a Greek symposium. At this point in the
-  evening, the Greeks would begin the {\itshape epikomion}---after-dinner
-  entertainment featuring drunken revelry, flute music and group sex.
+The structure of the Passover seder appears to be
+modelled, at least in part, after a Greek symposium. At this point in the
+evening, the Greeks would begin the {\itshape epikomion}---after-dinner
+entertainment featuring drunken revelry, flute music and group sex.
 \end{HgEnglish}
 
 
@@ -901,10 +988,10 @@ matzah to extort a gift of her choosing from the adults.
   מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
 \end{HgHebrewl}
 
-\begin{HgTranslit}
-  Yishtaba{\ch} shim{\ch}a l'ad malkeinu \\
+\begin{HgTranslit}\raggedright
+  Yishtaba{\ch} shim{\ch}a laad malkeinu \\
   ha'el hamele{\ch} hagadol v'hakadosh bashamayim u'v'aretz \\
-  ki l'{\ch}a na'eh, Adonai eloheinu v'elohei avoteinu \\
+  ki l'{\ch}a na'eh, Adonai eloheinu v'elohei avoteinu v'imoteinu\\
   shir u'sh'va{\ch}a, hallel u'v'zimrah, oz u'memshalah, netzah, \\
   g'dulah u'g'vurah, t'hilah v'tiferet, k'dushah umal{\ch}ut, \\
   bra{\ch}ot v'hoda'ot me'atah v'ad olam. \\
@@ -946,7 +1033,6 @@ matzah to extort a gift of her choosing from the adults.
   Blessed are you, Lord our God, ruler of the universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
-\vspace{-1em}
 
 \HgInst{Drink the fourth cup.}
 
@@ -971,6 +1057,153 @@ Still, we would not suffice \\
 \HgEllipsis 
 \end{verse}
 \HgSource{Nishmat Kol {\ch}ai}
+
+<<<<<<< HEAD
+=======
+\newpage
+\chapter{Nirtzah: Conclusion}
+
+\vfill
+
+\begin{HgHebrew}
+  לְשָׁנָה הַבָּאָה בִּירוּשַָׁלָיִם!
+  \vspace{-1em}
+\end{HgHebrew}
+
+\begin{HgTranslit}
+  \HgHL{L'shanah haba'ah b'yerushalayim!}
+  \vspace{-3em}
+\end{HgTranslit}
+
+\begin{HgEnglish}
+  \HgHL{Next year in Jerusalem!}
+\end{HgEnglish}
+
+\vfill
+\begin{center}
+  The End
+\end{center}
+\newpage
+
+\appendix
+
+\thispagestyle{empty}
+\chapter{Appendix}
+\vspace*{-1cm}
+\section*{The Seder Plate}
+
+There are six parts of the traditional seder plate. The Talmud has
+long discussion about what is and isn't suitable.
+\begin{itemize}
+\item Chazeret: additional bitter herbs (often lettuce)
+\item Karpas: Green vegetables -- usually parsley, watercress or
+  celery
+\item Beitzah: the roasted egg, symbolic of the temple sacrifice and
+  of renewal;
+\item Zeroa: the shankbone symolic of the sacrificial lamb. Today the
+  neck of a chicken is often used. Roasted beetroot is used by vegetarians.
+\item Charoset: traditionally nuts, dates, apple and sices and is symbolic of
+  the mortar used by the Israelites in Egypt.
+\item Maror: Bitter herbs, symbolising bitterness of
+  slavery. Horseradish is often used.
+\end{itemize}
+
+
+\noindent
+Some communities include an orange on the seder plate to symbolise
+those who have been excluded in the past.
+
+\noindent
+A bowl of salt water is placed near the seder plate.
+
+\section*{Counting the omer}
+
+\HgInst{Recited from the second night of Pesach for 49 nights}
+
+\begin{HgTranslit}
+Baruch atah Adonai Eloheinu melech ha’olam asher kid’shanu b’mitzvotav vitzivanu al sefirat ha’omer.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+Blessed are You, Adonai our God, Ruler of the universe, who sanctifies
+us with mitzvot, and commands us concerning the counting of the Omer.
+
+Today is \emph{x} days, which is \emph{y} weeks and \emph{z} days of
+the Omer
+\end{HgEnglish}
+
+\newpage
+
+\HgInst{Sing!}
+
+\begin{multicols}{2}
+\begin{HgTranslit}
+Shlosha asar mi yodea, \\
+Shlosha asar ani yodea.\\
+Shlosha asar midaya, \\
+Shneym asar shivtaya, \\
+Achad asar kochvaya, \\
+Asara dibraya, \\
+Tisha yarchei leda, \\
+Shmona y’mei milah,\\
+Shiva y’mei shabata, \\
+Shishah sidrei mishnah,\\ 
+Chamisha chumshei torah,\\ 
+Arba imahot,\\ 
+Shlosha avot,\\
+Shnei luchot habrit. \\
+Echad elohenu \\
+shebashamayim uva’aretz.
+\end{HgTranslit}
+\columnbreak
+\begin{HgEnglish}
+Who knows one oh? \\
+I'll sing you one, oh: \\
+One is God in heaven and earth \\
+and evermore shall be so. \\
+\HgEllipsis \\
+Thirteen are the attributes of God \\
+Twelve are the tribes of Israel \\
+Eleven are the stars in Joseph's dream \\
+Ten are the ten commandments \\
+Nine are the months of pregnancy \\
+Eight are the days of the {\itshape b'rit milah} \\
+Seven are the days of creation \\
+Six are the books of the Mishnah \\
+Five are the books of the Torah \\
+Four are the Matriarchs \\
+Three are the Patriarchs \\
+Two are the tables of the covenant \\
+One is God in heaven and earth \\
+and evermore shall be so.
+\end{HgEnglish}
+\end{multicols}
+
+
+\begin{minipage}{.45\textwidth}
+\begin{HgEnglish}
+{\itshape {\cH}ad gadya, {\cH}ad gadya}. \\
+\strut \hfill (An only kid, an only kid) \\
+\HgEllipsis \\
+Then came the Holy One, blessed be \\
+\vin he, \\
+and destroyed the angel of death, \\
+who slew the butcher, \\
+that slaughtered the ox, \\
+that drank the water, \\
+that quenched the fire, \\
+that burned the stick, \\
+that beat the dog, \\
+that bit the cat, \\
+that ate the kid \\
+my father bought for two {\itshape zuzim}. \\
+{\itshape {\cH}ad gadya, {\cH}ad gadya}.
+\end{HgEnglish}
+\end{minipage}
+
+\newpage
+
+
 
 \end{document}
 
