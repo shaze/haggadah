@@ -17,6 +17,14 @@
 \usepackage{polyglossia}
 \usepackage{fontspec}
 
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont%
+    \Large% %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
+    \Large %change this size to your needs for the second line
+    }
+
 \setdefaultlanguage{english}
 
 \setotherlanguage[numerals=hebrew]{hebrew}
@@ -30,6 +38,7 @@
 \newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
 \newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
+\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
 \newcommand{\HgHL}[1]{{\large\textbf{#1}\par\noindent\\[-.5em]}}
 \newcommand{\HgFill}{\vfill \hrule \vfill}
 
@@ -38,6 +47,9 @@
 \newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
 \newcommand{\LSrc}{\textsuperscript{\upshape{[L]}}}
 
+\newcommand{\cH}{CH}
+\newcommand{\ch}{ch}
+%\d{H}
 \newenvironment{myitemize}[0]{%
         \protect\begin{itemize}%
         \vspace*{-2mm}%
@@ -61,9 +73,13 @@
 \author{Seder for the perplexed family}
 
 \begin{document}
+\frontmatter
+\pagenumbering{roman}
 \maketitle
+\thispagestyle{empty}
 
-\chapter*{The Passover seder}
+
+\chapter{The Passover seder}
 
 \vfill
 
@@ -105,17 +121,23 @@
 \begin{HgTranslit}
   \begin{center}
   {\small 
-    KADESH - UR\d{H}ATZ - KARPAS - YA\d{H}ATZ - % \\
-    MAGID - RA\d{H}TZA - MOTZI - MATZAH \\ 
-    MAROR - KOREI\d{H} - SHUL\d{H}AN OREI\d{H} - % \\
-    TZAFUN - BAREI\d{H} - HALLEL - NIRTZAH}
+    KADESH - UR{\cH}ATZ - KARPAS - YA{\cH}ATZ - % \\
+    MAGID - RA{\cH}TZA - MOTZI - MATZAH \\ 
+    MAROR - KOREI{\cH} - SHUL{\cH}AN OREI{\cH} - % \\
+    TZAFUN - BAREI{\cH} - HALLEL - NIRTZAH}
   \end{center}
 \end{HgTranslit}
 
 
 \newpage
 
-\section*{Kiddush}
+\tableofcontents*
+
+
+
+\chapter{Kiddush}
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 \noindent
 On Shabbat
@@ -150,7 +172,7 @@ shehecheyanu, v'kiy'manu, v'higianu laz'man hazeh.
 \end{HgTranslit}
 
 \begin{HgEnglish}
-Our praise to You, Eternal our God, Sovereign of all:
+Our praise to You, Adonai, Sovereign of all:
 for giving us life, sustaining us, and enabling us to reach this season.
 \end{HgEnglish}
 
@@ -160,7 +182,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \vfill
 
 
-\section*{Ur\d{h}atz: Washing the hands}
+\chapter{Ur{\ch}atz: Washing the hands}
 
 
 \HgInst{Those who wish to may wash your hands, without reciting a blessing.}
@@ -170,7 +192,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
 
 \newpage
 
-\section*{Karpas: The green vegetable}
+\chapter{Karpas: The green vegetable}
 
 \begin{HgEnglish}
   The green vegetable represents rebirth, renewal and growth. The salt
@@ -194,12 +216,12 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam, \\
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   borei p'ri ha'adamah.
 \end{HgTranslit}
 \vspace{-1em}
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe, \\
+  Blessed are you, Adonai, Sovereign of the Universe, \\
   Who creates the fruit of the earth.
 \end{HgEnglish}
 
@@ -208,7 +230,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \vfill
 
 \newpage
-\section*{ Ya\d{h}atz: Breaking the matzah}
+\chapter{Ya{\ch}atz: Breaking the matzah}
 \vfill
 
 \HgInst{Break the middle matzah, and set aside the larger piece as the
@@ -244,14 +266,14 @@ afikoman. Hold the remaining matzah up, and read:}
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Hala\d{h}ma anya di a\d{h}alu avhatana \\
+  Hala{\ch}ma anya di a{\ch}alu avhatana \\
   b'ara d'mitzrayim.
-  Kol di\d{h}fin yeitei v'ye\d{h}ol \\
-  kol ditzri\d{h} yeitei v'yifsa\d{h}. \\
-  Hashata ha\d{h}a, %\\
+  Kol di{\ch}fin yeitei v'ye{\ch}ol \\
+  kol ditzri{\ch} yeitei v'yifsa{\ch}. \\
+  Hashata ha{\ch}a, %\\
   l'shanah haba'ah b'ara d'yisrael. \\
   Hashata avdei, %\\
-  l'shanah haba'ah b'nei \d{h}orin.
+  l'shanah haba'ah b'nei {\ch}orin.
 \end{HgTranslit}
 
 
@@ -263,7 +285,7 @@ afikoman. Hold the remaining matzah up, and read:}
 
 \newpage
 
-\section*{Magid: The Passover story}
+\chapter{Magid: The Passover story}
 
 \subsubsection*{The  four questions.}
 
@@ -304,13 +326,13 @@ afikoman. Hold the remaining matzah up, and read:}
 
 \begin{HgTranslit}
   \HgHL{Ma nishtanah halailah hazeh mikol haleilot?}
-  Shebe\d{h}ol haleilot, anu o\d{h}lin \d{h}ametz umatzah, 
+  Shebe{\ch}ol haleilot, anu o{\ch}lin {\ch}ametz umatzah, 
   halailah hazeh kulo matzah. \\
-  Shebe\d{h}ol haleilot, anu o\d{h}lin sh'ar y'rakot, 
+  Shebe{\ch}ol haleilot, anu o{\ch}lin sh'ar y'rakot, 
   halailah hazeh maror. \\
-  Shebe\d{h}ol haleilot, ein anu §matbilin afilu p'am e\d{h}ad,
+  Shebe{\ch}ol haleilot, ein anu matbilin afilu p'am e{\ch}ad,
   halailah hazeh sh'tei f'amin. \\
-  Shebe\d{h}ol haleilot, anu o\d{h}lin bein yoshvin uvein m'subin,
+  Shebe{\ch}ol haleilot, anu o{\ch}lin bein yoshvin uvein m'subin,
   halailah hazeh \\ \strut $\quad$ kulanu m'subin.
 \end{HgTranslit}
 
@@ -437,11 +459,11 @@ read each plague. Don't lick your finger!}
     Kinim \\
     Arov \\
     Dever \\
-    Sh'\d{h}in \\
+    Sh'{\ch}in \\
     Barad \\
     Arbeh \\
-    \d{H}oshe\d{h} \\
-    Ma\d{h}at b'\d{h}orot\\}
+    {\cH}oshe{\ch} \\
+    Ma{\ch}at b'{\ch}orot\\}
 
 \columnbreak
 \noindent
@@ -557,7 +579,7 @@ matzah, and the maror.
 
 \columnbreak
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam,
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.\\
 \phantom{extra line}
 \end{HgTranslit}
@@ -565,7 +587,7 @@ matzah, and the maror.
 \columnbreak
 
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe,
+  Blessed are you, Adonai, Sovereign of the Universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
 \end{multicols}
@@ -574,7 +596,7 @@ matzah, and the maror.
 
 \newpage
 
-\section*{Ra\d{h}tza: Washing the hands again}
+\chapter{Ra{\ch}tza: Washing the hands again}
 
 
 \HgInst{For those who wish, wash your hands, and individually recite:}
@@ -589,13 +611,13 @@ matzah, and the maror.
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam, \\
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
   v'tzivanu al n'tilat yadayim.
 \end{HgTranslit}
 
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe, \\
+  Blessed are you, Adonai, Sovereign of the Universe, \\
   who sanctifies us with your commandments, \\
   and commands us to wash our hands.
 \end{HgEnglish}
@@ -610,7 +632,7 @@ the Matzah, so that they can be spoken as a single blessing.
 
 \newpage
 
-\chapter*{Motzi: Blessing the bread \\ Matzah: Blessing the matzah}
+\chapter{Motzi: Blessing the bread\\Matzah: Blessing the matzah}
 
 \vfill
 
@@ -625,12 +647,12 @@ the Matzah, so that they can be spoken as a single blessing.
 
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam, \\
-  hamotzi le\d{h}em min ha'aretz.
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
+  hamotzi le{\ch}em min ha'aretz.
 \end{HgTranslit}
 
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe, \\
+  Blessed are you, Adonai, Sovereign of the Universe, \\
   who brings forth bread from the earth.\\
 \end{HgEnglish}
 
@@ -648,13 +670,13 @@ the table. Continuing to hold only those pieces, read:}
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam, \\
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
-  v'tzivanu al a\d{h}ilat matzah.
+  v'tzivanu al a{\ch}ilat matzah.
 \end{HgTranslit}
 
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe, \\
+  Blessed are you, Adonai, Sovereign of the Universe, \\
   who sanctifies us with your commandments, \\
   and commands us to eat matzah.
 \end{HgEnglish}
@@ -662,7 +684,7 @@ the table. Continuing to hold only those pieces, read:}
 \newpage
 
 \begin{HgEnglish}
-  It is said that Rabbi Levi Yitz\d{h}ak of Berditchev discovered that the young
+  It is said that Rabbi Levi Yitz{\ch}ak of Berditchev discovered that the young
   girls who kneaded the dough for matzah worked from early in the morning until
   late at night. Every 17 minutes, the workers had to scrub their hands, to be
   sure that no particle of yeast remained on their fingers that might leaven the
@@ -687,12 +709,12 @@ the table. Continuing to hold only those pieces, read:}
 \end{HgEnglish}
 
 \newpage
-\section*{Maror: Blessing the bitter herb \\
-         Korei\d{h}: Hillel's sandwich}
+\chapter{Maror: Blessing the bitter herb \\
+         Korei{\ch}: Hillel's sandwich}
 \vfill
 
-\HgInst{Take a spoonful of maror. Dip it in the \d{h}aroset, then shake the
-\d{h}aroset off. Now recite:}
+\HgInst{Take a spoonful of maror. Dip it in the {\ch}aroset, then shake the
+{\ch}aroset off. Now recite:}
 
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
@@ -704,13 +726,13 @@ the table. Continuing to hold only those pieces, read:}
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam, \\
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
-  v'tzivanu al a\d{h}ilat matzah.
+  v'tzivanu al a{\ch}ilat matzah.
 \end{HgTranslit}
 
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe, \\
+  Blessed are you, Adonai, Sovereign of the Universe, \\
   who sanctifies us with your commandments, \\
   and commands us to eat maror.
 \end{HgEnglish}
@@ -718,7 +740,7 @@ the table. Continuing to hold only those pieces, read:}
 \HgFill
 
 \HgInst{Distribute the third matzah. Take a spoonful of maror and a spoonful of
-  \d{h}aroset, and place them between two pieces of matzah in a sandwich. Say:}
+  {\ch}aroset, and place them between two pieces of matzah in a sandwich. Say:}
 
 \HgEnglish{Thus did Hillel, in the days of the Temple, combine the
   Passover lamb, the matzah and the maror and eat them together, as it is said:
@@ -726,10 +748,10 @@ the table. Continuing to hold only those pieces, read:}
 
 
 \newpage
-\section*{Shul\d{h}an Orei\d{h}: Eating}
+\chapter{Shul{\ch}an Orei{\ch}: Eating}
 \vfill
 \begin{center}
-  \fontsize{50pt}{50pt}
+  \fontsize{32pt}{32pt}
   \selectfont
   The
   meal
@@ -739,7 +761,7 @@ the table. Continuing to hold only those pieces, read:}
 \vfill
 
 \newpage
-\section*{Tzafun: The hidden}
+\chapter{Tzafun: The hidden}
 
 \vfill
 
@@ -754,7 +776,7 @@ group.  This should be the last thing you eat tonight.}
 
 \begin{HgEnglish}
 In most families, it is customary to hide the matzah during {\bfseries
-ya\d{h}atz}. At this point in the evening the children search for the matzah,
+ya{\ch}atz}. At this point in the evening the children search for the matzah,
 and a prize is awarded to the one who finds it.
 
 Traditionally, it's even less straightforward. The seder cannot proceed until
@@ -767,7 +789,7 @@ matzah to extort a gift of her choosing from the adults.
 
 \begin{HgEnglish}
   The structure of the Passover seder appears to be
-  modeled, at least in part, after a Greek symposium. At this point in the
+  modelled, at least in part, after a Greek symposium. At this point in the
   evening, the Greeks would begin the {\itshape epikomion}---after-dinner
   entertainment featuring drunken revelry, flute music and group sex.
 \end{HgEnglish}
@@ -775,14 +797,10 @@ matzah to extort a gift of her choosing from the adults.
 
 \newpage
 
-\section*{Barei\d{h}: Blessing after the meal \\ {\LARGE The Grace After Meals}}
-
-\vfill
-
-\HgInst{Pour the third cup of wine.}
+\chapter{Barei{\ch}: Blessing \& grace after the meal}
 
 
-\HgInst{Read:}
+\HgInst{Pour the third cup of wine, and read:}
 
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
@@ -803,31 +821,27 @@ matzah to extort a gift of her choosing from the adults.
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} atah Adonai, eloheinu mele\d{h} ha'olam \\
-  hazan et ha'olam kulo b'tuvo b\d{h}ein b'\d{h}esed u'vra\d{h}amim. \\
-  Hu notein le\d{h}em l'\d{h}ol basar ki l'olam \d{h}asdo. \\
-  U'vtuvo hagadol tamid lo \d{h}asar lanu, \\
-  v'al ye\d{h}sar lanu mazon l'olam va'ed. \\
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam \\
+  hazan et ha'olam kulo b'tuvo b{\ch}ein b'{\ch}esed u'vra{\ch}amim. \\
+  Hu notein le{\ch}em l'{\ch}ol basar ki l'olam {\ch}asdo. \\
+  U'vtuvo hagadol tamid lo {\ch}asar lanu, \\
+  v'al ye{\ch}sar lanu mazon l'olam va'ed. \\
   Ba'avur shemo hagadol, ki hu elzan um'farnes lakol \\
-  umetiv lakol, ume\d{h}in mazon, l'\d{h}ol b'riotav asher bara. \\
-  Baru\d{h} ata Adonai, hazan et hakol.
+  umetiv lakol, ume{\ch}in mazon, l'{\ch}ol b'riotav asher bara. \\
+  Baru{\ch} ata Adonai, hazan et hakol.
 \end{HgTranslit}
-\begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe \\
-  who feeds the world with goodness, kindness and mercy. \\
-  He gives food to all the world, for his kindness is everlasting. \\
-  Through his great goodness we have not lacked food; \\
-  and may we never lack it until the end of time, \\
-  for his name's sake. For he sustains all, \\
-  does good to all, and provides food to all the creatures he created. \\
-  Blessed are you, Lord our God, who feeds all.
+\begin{HgEnglish}\raggedright
+  Blessed are you, Adonai, Sovereign of the Universe,
+  who feeds the world with goodness, kindness and mercy,   who gives food to all the world, for your kindness is everlasting.  Through your great goodness we have not lacked food;
+  and may we never lack it until the end of time, for your name's sake. For Adonai sustains all, 
+  does good to all, and provides food to all the creatures. \\
+  Blessed are you, Adonai, who feeds all.
 \end{HgEnglish}
 
 \newpage
 
-\section*{Barei\d{h}: Blessing after the meal}
 
-\subsubsection*{The third cup and Elijah's cup}
+\subsection*{The third cup and Elijah's cup}
 
 \vfill
 
@@ -838,11 +852,11 @@ matzah to extort a gift of her choosing from the adults.
 \end{HgHebrew}
 
 \begin{HgTranslit}
-  Baru\d{h} ata Adonai, eloheinu mele\d{h} ha'olam,
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.
 \end{HgTranslit}
 \begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe,
+  Blessed are you, Adonai, Sovereign of the Universe,
   who creates the fruit of the vine.
 \end{HgEnglish}
 \vspace{-1em}
@@ -870,6 +884,94 @@ matzah to extort a gift of her choosing from the adults.
 \end{HgEnglish}
 
 \vfill
+
+\chapter{Hallel: Songs of praise and the fourth cup}
+
+\HgInst{Recite:}
+
+\begin{HgHebrewl}
+  יִשְׁתַּבַּח שִׁמְךָ לַָעַד מַלְכֵּנוּ,  \\
+  הָאֵל הַמֶלֶךְ הַגָּדוֹל וְהַקָּדוֹשׁ בַּשָּׁמַיִם וּבַָאָרֶץ, \\
+  כִּי לְךָ נָאֶה, יי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ ,  \\
+  שִׁיר וּשְׁבָחָה, הַלֵּל וְזִמְרָה, עֹז וּמֶמְשָׁלָה, נֶצַח,  \\
+  גְּדֻלָּה וּגְבוּרָה, תְּהִלָה וְתִפְאֶרֶת, קְדֻשָּׁה וּמַלְכוּת, \\
+  בְּרָכוֹת וְהוֹדָאוֹת מֵעַתָּה וְעַד עוֹלָם.  \\
+  בָּרוּךְ אַתָּה יי , אֵל מֶלֶךְ גָּדוֹל בַּתִּשְׁבָּחוֹת,  \\
+  אֵל הַהוֹדָאוֹת, אֲדוֹן הַנִפְלָאוֹת, הַבּוֹחֵר בְּשִׁירֵי זִמְרָה,  \\
+  מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
+\end{HgHebrewl}
+
+\begin{HgTranslit}
+  Yishtaba{\ch} shim{\ch}a l'ad malkeinu \\
+  ha'el hamele{\ch} hagadol v'hakadosh bashamayim u'v'aretz \\
+  ki l'{\ch}a na'eh, Adonai eloheinu v'elohei avoteinu \\
+  shir u'sh'va{\ch}a, hallel u'v'zimrah, oz u'memshalah, netzah, \\
+  g'dulah u'g'vurah, t'hilah v'tiferet, k'dushah umal{\ch}ut, \\
+  bra{\ch}ot v'hoda'ot me'atah v'ad olam. \\
+  Baru{\ch} atah Adonai, El mele{\ch} gadol batishba{\ch}ot. \\
+  El hahoda'ot, Adon hanifla'ot, Habo{\ch}er bshirei zimrah \\
+  Mele{\ch} el {\ch}ai haolamim.
+\end{HgTranslit}
+
+\vspace*{-3mm}
+
+\begin{HgEnglish}
+  Let your name be praised forever,
+  Adonai, Great Sovereign, holy in heaven and earth.
+  For yours, Adonai our God and God of our ancestors, 
+  is song and praise, celebration and psalm, power and dominion, and victory, 
+  greatness and strength, worship and glory, holiness and splendor,
+  blessing and thanks, now and forever.
+  Blessed are you, god and great sovereign, 
+  God of thanksgiving, Master of wonders, creator of souls, delighter in song, 
+  Adonai and life of worlds.
+\end{HgEnglish}
+
+\newpage
+
+\HgInst{One more time:}
+
+\begin{HgHebrew} 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָפֶן.
+\end{HgHebrew}
+%\vspace{-1em}
+
+\begin{HgTranslit}
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
+  borei p'ri hagafen.
+\end{HgTranslit}
+
+
+\begin{HgEnglish}
+  Blessed are you, Lord our God, ruler of the universe,
+  who creates the fruit of the vine.
+\end{HgEnglish}
+\vspace{-1em}
+
+\HgInst{Drink the fourth cup.}
+
+
+\noindent
+
+\settowidth{\versewidth}{\vin in thanking You, Lord God-of-us}
+\begin{verse}[\versewidth]
+Were it our mouths were filled \\
+\vin with a singing like the sea, \\
+Our tongues awash with song, \\
+\vin as waves-countless, \\
+And our lips to lauding, \\
+\vin as the skies are wide, \\
+And our eyes illumined \\
+\vin like the sun and the moon, \\
+And our hands spread-out \\
+\vin like the eagles of heaven, \\
+And our feet as fleet as fawns, \\
+Still, we would not suffice \\
+\vin in thanking You, Lord God-of-us
+\HgEllipsis 
+\end{verse}
+\HgSource{Nishmat Kol {\ch}ai}
+
 \end{document}
 
 %%% Local Variables: 
