@@ -1,16 +1,23 @@
-\documentclass[a4paper,12pt,openany]{memoir}
+\documentclass[12pt,a4wide,openany]{memoir}
 
-\usepackage{setspace}
+
+
+
+
+
+
+\usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{afterpage}
 \usepackage[pagecolor=none]{pagecolor}
-
+\usepackage{verse}
 \usepackage{polyglossia}
 \usepackage{fontspec}
 \usepackage{url}
 \usepackage{titlesec}
 
-
+\settypeblocksize{20cm}{16cm}{*}
+% \setlrmargins{1.5cm}{*}{*}
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
 {\normalfont%
@@ -72,7 +79,7 @@ ItalicFont = *-Italic ]{Carlito}
     }
 
 
-\setlength{\beforechapskip}{0cm}
+
 
 \newcommand{\HgSource}[1]{\hfill{\small---\itshape{#1}}}
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
@@ -109,10 +116,14 @@ ItalicFont = *-Italic ]{Carlito}
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{enumerate}}
 
-\title{\vspace*{-2cm}\Huge Haggadah}
+\title{\vspace*{-4cm}Haggadah}
 
-\author{\huge Seder for the perplexed \&  perplexing family}
-\date{\Large Pesach, 5778}
+\author{\vspace*{-1cm}Seder for the perplexed \& perplexing family}
+\date{Pesach, 5778}
+
+\usepackage{tocloft}
+\setlength{\cftbeforechapterskip}{.1ex}
+%\setlrmargins{2cm}
 \begin{document}
 \frontmatter
 \newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
@@ -123,6 +134,7 @@ ItalicFont = *-Italic ]{Carlito}
 
 
 \noindent\hspace*{-5cm}
+\vspace*{-3cm}
 \includegraphics[width=232mm]{figs/matzo.jpg}
 \thispagestyle{empty}
 
@@ -215,24 +227,30 @@ set in Charter. The Hebrew text is set in Shofar.
 \end{HgTranslit}
 
 
+
 \newpage
+
 
 \tableofcontents*
 
+\newpage
+\setcounter{page}{1}
+\pagenumbering{arabic}
 
 
 \chapter{Kiddush}
-\setcounter{page}{1}
-\pagenumbering{arabic}
+
+\vspace*{-3cm}
 
 \noindent
 On Shabbat
 
+\begin{center}
 \begin{tabular}{r}
-\includegraphics[width=6cm]{figs/0A010-vayehi}\\
-\includegraphics[scale=1.5,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
+\includegraphics[width=2cm,trim=25mm 0mm 0mm 0mm]{figs/0A010-vayehi}\\
+\includegraphics[width=9cm,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
 \end{tabular}
-
+\end{center}
 
 \newpage
 \HgInst{Pour the first cup of wine, and read:}
@@ -321,11 +339,15 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \vfill
 
 \HgInst{Break the middle matzah, and set aside the larger piece as the
-afikoman. Hold the remaining matzah up, and read:}
+afikoman.}
 
+\HgInst{Hold the remaining matzah up, and read:}
+
+\vfill
+\newpage
 \begin{HgEnglish}
-  \HgHL{
-  This is the bread of affliction that our ancestors ate \\
+  \textbf{
+  This is the bread of affliction that our ancestors ate
   in the land of Egypt.
   }
   All who are hungry, come and eat; \\
@@ -1040,7 +1062,7 @@ entertainment featuring drunken revelry, flute music and group sex.
 
 \noindent
 
-\settowidth{\versewidth}{\vin in thanking You, Lord God-of-us}
+\settowidth{\versewidth}{in thanking You, Lord God-of-us}
 \begin{verse}[\versewidth]
 Were it our mouths were filled \\
 \vin with a singing like the sea, \\
