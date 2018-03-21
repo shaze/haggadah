@@ -1,7 +1,4 @@
-\documentclass[12pt,a4wide,openany]{memoir}
-
-
-
+\documentclass[extrafontsizes,twoside,17pt,a4paper,openany]{memoir}
 
 
 
@@ -16,14 +13,22 @@
 \usepackage{url}
 \usepackage{titlesec}
 
-\settypeblocksize{20cm}{16cm}{*}
-% \setlrmargins{1.5cm}{*}{*}
+\usepackage{lipsum}
+\settypeblocksize{240mm}{164mm}{*}
+\settrims{0pt}{0pt}
+\setlength{\foremargin}{72pt}
+\setlength{\uppermargin}{29pt}
+\setulmargins{24mm}{*}{*}
+%\setlength{\footskip}{24pt}
+\checkandfixthelayout
+%\setheaderspaces{5mm}{*}{*}
+
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
 {\normalfont%
-    \Large% %change this size to your needs for the first line
-    \bfseries}{\chaptertitlename\ \thechapter}{20pt}{%
-    \Large %change this size to your needs for the second line
+    % %change this size to your needs for the first line
+    \bfseries}{\chaptertitlename\ \thechapter}{12pt}{%
+    %change this size to your needs for the second line
     }
 
 \setdefaultlanguage{english}
@@ -93,8 +98,8 @@ ItalicFont = *-Italic ]{Carlito}
 %\d{H}
 
 
-\newenvironment{HgHebrew}{\begin{hebrew}\strut\\\noindent\Large}{\end{hebrew}}
-\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent\large}{\end{hebrew}}
+\newenvironment{HgHebrew}{\begin{hebrew}\noindent\large}{\end{hebrew}}
+\newenvironment{HgHebrewl}{\begin{hebrew}\strut\\\noindent}{\end{hebrew}}
 \newenvironment{HgEnglish}{\strut\\\noindent}{\vspace{1em}}
 \newenvironment{HgTranslit}{\strut\\\noindent\begin{itshape}}{\end{itshape}\vspace{1em}}
 \newenvironment{myitemize}[0]{%
@@ -123,7 +128,7 @@ ItalicFont = *-Italic ]{Carlito}
 
 \usepackage{tocloft}
 \setlength{\cftbeforechapterskip}{.1ex}
-%\setlrmargins{2cm}
+
 \begin{document}
 \frontmatter
 \newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
@@ -154,6 +159,7 @@ ItalicFont = *-Italic ]{Carlito}
 \vfill\phantom{Hello}\vfill
 
 \vfill
+{\small
 \paragraph*{Acknowledgments}
 
 \begin{itemize}
@@ -173,7 +179,7 @@ ItalicFont = *-Italic ]{Carlito}
 \noindent
 This  haggadah is produced in {\XeLaTeX}. The English text is
 set in Charter. The Hebrew text is set in Shofar.
-
+}
 \newpage
 
 
@@ -230,17 +236,16 @@ set in Charter. The Hebrew text is set in Shofar.
 
 \newpage
 
+{\small
 
 \tableofcontents*
-
+}
 \newpage
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-
 \chapter{Kiddush}
 
-\vspace*{-3cm}
 
 \noindent
 On Shabbat
@@ -300,13 +305,12 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \chapter{Karpas: The green vegetable}
 
 \begin{HgEnglish}\raggedright
-  The green vegetable represents rebirth, renewal and growth. The salt
-  water represents the tears we shed when we were slaves in Egypt. The
-  karpas is usually a fresh vegetable like parsley, watercress or
+  The green vegetable represents rebirth, renewal and growth. Salt
+  water represents the tears we shed when we were slaves in Egypt. Karpas
+  is usually a fresh vegetable like parsley, watercress or
   celery, though there are other customs.
 \end{HgEnglish}
 
-\vfill
 
 \HgInst{Distribute the karpas, and dip them in saltwater.}
 
@@ -341,10 +345,11 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \HgInst{Break the middle matzah, and set aside the larger piece as the
 afikoman.}
 
+\vfill
+
 \HgInst{Hold the remaining matzah up, and read:}
 
 \vfill
-\newpage
 \begin{HgEnglish}
   \textbf{
   This is the bread of affliction that our ancestors ate
@@ -358,6 +363,11 @@ afikoman.}
   next year may we be free.
 \end{HgEnglish}
 
+\vfill
+\newpage
+
+\phantom{see}
+\vfill 
 \begin{HgHebrew}
   הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
   \\
@@ -400,20 +410,20 @@ afikoman.}
 
 \vfill
 
-\HgInst{The youngest person present  (however defined, or next in
-  turn) recites:}
+\HgInst{The youngest person present (however defined) recites:}
 
 \vfill
 
 \begin{HgEnglish}
-  \HgHL{Why is this night different from all other nights?}
-  On other nights, we eat leavened bread and matzah; tonight only matzah. \\
-  On other nights, we eat all kinds of herbs; tonight bitter herbs. \\
-  On other nights, we do not dip our food; tonight we dip twice. \\
-  On other nights, we eat upright or reclining; tonight we all recline. \\
+  \textbf{Why is this night different from all other nights?}\\
+  On other nights, we eat leavened bread and matzah;   --- tonight only matzah. \\
+  On other nights, we eat all kinds of herbs;  --- tonight bitter herbs. \\
+  On other nights, we do not dip our food;   --- tonight we dip twice. \\
+  On other nights, we eat upright or reclining;   --- tonight we all recline. \\
 \end{HgEnglish}
 
-\begin{HgHebrew}
+
+\begin{HgHebrew}\normalsize
 מַה נִּשְּׁתַּנָה הַלַּיְלָה הַזֶּה מִכָּל הַלֵּילוֹת? 
 \\
 שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין חָמֵץ וּמַצָּה,
@@ -433,8 +443,9 @@ afikoman.}
 הַלַּיְלָה הַזֶּה כֻּלָנו מְסֻבִּין. 
 \end{HgHebrew}
 
+
 \begin{HgTranslit}
-  \HgHL{Ma nishtanah halailah hazeh mikol haleilot?}
+  \textbf{Ma nishtanah halailah hazeh mikol haleilot?}\\
   Shebe{\ch}ol haleilot, anu o{\ch}lin {\ch}ametz umatzah, 
   halailah hazeh kulo matzah. \\
   Shebe{\ch}ol haleilot, anu o{\ch}lin sh'ar y'rakot, 
@@ -552,15 +563,16 @@ seraph. And I will carry out judgments against all the gods of Egypt,"
 
 \newpage
 
+\HgInst{When reading the plagues below, dip a finger in the cup, and spill a drop of wine on the plate as you read each plague. Don't lick your finger!}
+
+\vfill
 
 \begin{HgEnglish}
 \textbf{The Ten Plagues} These are the ten plagues which the Holy One, blessed be He, brought
 upon the Egyptians in Egypt, namely:
 \end{HgEnglish}
 
-\HgInst{Dip a finger in the cup, and spill a drop of wine on the plate as you
-read each plague. Don't lick your finger!}
-
+\vfill
 \begin{multicols}{3}
 \noindent  \textit{
     Dam \\
@@ -586,7 +598,9 @@ read each plague. Don't lick your finger!}
       Locusts \\
       Darkness \\
       Death of the firstborn
+
 \columnbreak
+
   \begin{HgHebrew}
 \noindent
   דָּם 
@@ -611,12 +625,11 @@ read each plague. Don't lick your finger!}
   \end{HgHebrew}
 \end{multicols}
 
-
-
+\vfill
+\newpage
 \HgInst{Then read or sing:}
 
-\begin{HgEnglish}
-\begin{multicols}{2}
+\begin{multicols}{2}\raggedright
   Had he only brought us out of Egypt, and not judged them, dayenu \\ (it would
   have been enough)!
   Had he only judged them, and not their idols, dayenu!\\
@@ -631,7 +644,7 @@ read each plague. Don't lick your finger!}
   Had he only given us the Torah, and not brought us into Israel, dayenu!\\
   Had he only given us the Torah, and not built the temple for us, dayenu!
 \end{multicols}
-\end{HgEnglish}
+
 
 \begin{HgEnglish}
 \textbf{We spill our wine so that our pleasure during the holiday is tempered in
@@ -670,6 +683,7 @@ matzah, and the maror.
   with bricks and mortar.
 \end{HgEnglish}\\
 
+\newpage
 \HgInst{Then read:}
 \begin{HgEnglish}
   \textbf{In every generation, let each one say that he himself came out of
