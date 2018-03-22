@@ -129,20 +129,41 @@ ItalicFont = *-Italic ]{Carlito}
 
 \begin{document}
 \frontmatter
-\newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
+\definecolor{Mycolor2}{HTML}{9EB3FF}
+\definecolor{oats}{HTML}{e8d2b1}
+\definecolor{jonipink}{HTML}{ffa6fe}
+\definecolor{jonigrey}{HTML}{82848a}
+\newpagecolor{jonigrey}\afterpage{\restorepagecolor}
 \pagenumbering{roman}
-\maketitle
+
+
 
 \thispagestyle{empty}
 \pagestyle{plain}
 
+\begin{center}
 
-\noindent\hspace*{-5cm}
-\vspace*{-3cm}
-\includegraphics[width=242mm]{figs/matzo.jpg}
+\vfill
+{  \Huge \textcolor{oats}{\bfseries Seder for the perplexed and perplexing family}}
+
+\end{center}
+
+\medskip
+
+                       \noindent\hspace*{-5mm}
+\includegraphics[width=180mm,trim=28mm 10mm 25mm 15mm,clip]{figs/matzo.jpg}
 \thispagestyle{empty}
 
-%\newpage
+\medskip
+
+\begin{center}
+{\HUGE \textcolor{jonipink}{\bfseries Haggadah }}
+
+\bigskip
+
+{\Large \textcolor{oats}{Pesach, Johannesburg, 5778 }}
+\end{center}
+
 
 
 \newpage
@@ -225,8 +246,8 @@ On Shabbat
 
 \begin{center}
 \begin{tabular}{r}
-\includegraphics[width=3cm,trim=25mm 0mm 0mm 0mm]{figs/0A010-vayehi}\\
-\includegraphics[width=12cm,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
+\includegraphics[width=35mm,trim=25mm 0mm 0mm 0mm]{figs/0A010-vayehi}\\
+\includegraphics[width=125mm,trim=0mm 0mm 2mm 0mm,clip]{figs/0A014-vayechulu}\\
 \end{tabular}
 \end{center}
 
@@ -1256,7 +1277,20 @@ and evermore shall be so.
 & 
 \end{tabular}
 
+\newpage
 
+\newpagecolor{jonigrey}\afterpage{\restorepagecolor}
+\phantom{.}
+
+\vfill
+
+\begin{center}
+  \includegraphics[width=8cm]{figs/dove.jpg}
+\end{center}
+\thispagestyle{empty}
+
+
+\vfill
 
 \end{document}
 
