@@ -14,7 +14,7 @@
 \usepackage{titlesec}
 
 \usepackage{lipsum}
-\settypeblocksize{240mm}{164mm}{*}
+\settypeblocksize{240mm}{162mm}{*}
 \settrims{0pt}{0pt}
 \setlength{\foremargin}{72pt}
 \setlength{\uppermargin}{29pt}
@@ -23,14 +23,8 @@
 \checkandfixthelayout
 %\setheaderspaces{5mm}{*}{*}
 
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-{\normalfont%
-    % %change this size to your needs for the first line
-    \bfseries}{\chaptertitlename\ \thechapter}{12pt}{%
-    %change this size to your needs for the second line
-    }
 
+\renewcommand{\clearforchapter}{}
 \setdefaultlanguage{english}
 
 \setotherlanguage[numerals=hebrew]{hebrew}
@@ -90,7 +84,7 @@ ItalicFont = *-Italic ]{Carlito}
 \newcommand{\HgEllipsis}{\ensuremath{\left[\ldots\right]}}
 \newcommand{\HgHL}[1]{{\large\textbf{#1}\par\noindent\\[-.5em]}}
 \newcommand{\HgFill}{\vfill \hrule \vfill}
-\newcommand{\HgInst}[1]{{\noindent\sffamily{\bfseries{#1}}}}
+\newcommand{\HgInst}[1]{{\noindent\sffamily{{#1}}}}
 \newcommand{\LSrc}{\textsuperscript{\upshape{[L]}}}
 \newcommand{\cH}{Ch}
 \newcommand{\CH}{CH}
@@ -107,6 +101,7 @@ ItalicFont = *-Italic ]{Carlito}
         \vspace*{-2mm}%
         \setlength{\topsep}{-6pt}%
         \setlength{\labelsep}{4pt}%
+        \setlength{\itemindent}{-6pt}%
         \setlength{\partopsep}{-6pt}%
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{itemize}}
@@ -115,7 +110,7 @@ ItalicFont = *-Italic ]{Carlito}
 \newenvironment{myenumerate}[0]{%
         \protect\begin{enumerate}%
         \vspace*{-2mm}%
-        \setlength{\topsep}{-6pt}%
+        \setlength{\topsep}{2pt}%
         \setlength{\labelsep}{4pt}%
         \setlength{\partopsep}{-6pt}%
         \setlength{\itemsep}{-2pt}}%
@@ -124,23 +119,27 @@ ItalicFont = *-Italic ]{Carlito}
 \title{\vspace*{-4cm}Haggadah}
 
 \author{\vspace*{-1cm}Seder for the perplexed \& perplexing family}
-\date{Pesach, 5778}
+\date{Pesach, Johannesburg, 5778}
 
 \usepackage{tocloft}
 \setlength{\cftbeforechapterskip}{.1ex}
+
+\makeevenhead{plain}{}{}{}
+\makeevenfoot{plain}{}{\thepage}{}
 
 \begin{document}
 \frontmatter
 \newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
 \pagenumbering{roman}
 \maketitle
-\thispagestyle{empty}
 
+\thispagestyle{empty}
+\pagestyle{plain}
 
 
 \noindent\hspace*{-5cm}
 \vspace*{-3cm}
-\includegraphics[width=232mm]{figs/matzo.jpg}
+\includegraphics[width=242mm]{figs/matzo.jpg}
 \thispagestyle{empty}
 
 %\newpage
@@ -154,33 +153,6 @@ ItalicFont = *-Italic ]{Carlito}
 \newpage
 \setcounter{page}{1}
 \maketitle
-
-\newpage
-\vfill\phantom{Hello}\vfill
-
-\vfill
-{\small
-\paragraph*{Acknowledgments}
-
-\begin{itemize}
-\item Major  source material for this haggadah was the {\LaTeX}
-  source of the The Columbia Commune Churchill Free Haggadah
-  \url{https://github.com/jacobandreas/haggadah}, which had been
-  placed in the public domain.
-\item The photo on the
-  front cover is by Yoninah (Own work) [GFDL
-  (\url{http://www.gnu.org/copyleft/fdl.html}), CC-BY-SA-3.0
-  (\url{http://creativecommons.org/licenses/by-sa/3.0/}) or CC BY 2.5
-  (\url{http://creativecommons.org/licenses/by/2.5)}], via Wikimedia
-  Commons
-\end{itemize}
-
-\vfill
-\noindent
-This  haggadah is produced in {\XeLaTeX}. The English text is
-set in Charter. The Hebrew text is set in Shofar.
-}
-\newpage
 
 
 \chapter{The Passover seder}
@@ -241,8 +213,9 @@ set in Charter. The Hebrew text is set in Shofar.
 \tableofcontents*
 }
 \newpage
-\setcounter{page}{1}
 \pagenumbering{arabic}
+\setcounter{page}{1}
+
 
 \chapter{Kiddush}
 
@@ -268,7 +241,8 @@ On Shabbat
 
 \newpage
 
-\paragraph*{Shehecheyanu}
+\subsubsection*{Shehecheyanu}
+
 
 \begin{HgHebrew}
  בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
@@ -285,6 +259,7 @@ shehecheyanu, v'kiy'manu, v'higianu laz'man hazeh.
 Our praise to You, Adonai, Sovereign of all:
 for giving us life, sustaining us, and enabling us to reach this season.
 \end{HgEnglish}
+
 
 \noindent
 \HgInst{Drink the first cup of wine}
@@ -356,17 +331,13 @@ afikoman.}
   in the land of Egypt.
   }
   All who are hungry, come and eat; \\
-  all who are needy, come and celebrate the Passover. \\
+  All who are needy, come and celebrate the Passover. \\
   Now we are here;
-  next year may we be in Israel; \\
-  now we are slaves;
-  next year may we be free.
+  Next year may we be in Israel; \\
+  Now we are slaves;
+  Next year may we be free.
 \end{HgEnglish}
 
-\vfill
-\newpage
-
-\phantom{see}
 \vfill 
 \begin{HgHebrew}
   הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
@@ -406,17 +377,14 @@ afikoman.}
 
 \chapter{Magid: The Passover story}
 
-\subsubsection*{The  four questions.}
-
-\vfill
+\subsection*{The  four questions.}
 
 \HgInst{The youngest person present (however defined) recites:}
 
-\vfill
 
 \begin{HgEnglish}
   \textbf{Why is this night different from all other nights?}\\
-  On other nights, we eat leavened bread and matzah;   --- tonight only matzah. \\
+  On other nights, we eat leavened bread and matzah; \\  --- tonight only matzah. \\
   On other nights, we eat all kinds of herbs;  --- tonight bitter herbs. \\
   On other nights, we do not dip our food;   --- tonight we dip twice. \\
   On other nights, we eat upright or reclining;   --- tonight we all recline. \\
@@ -451,9 +419,8 @@ afikoman.}
   Shebe{\ch}ol haleilot, anu o{\ch}lin sh'ar y'rakot, 
   halailah hazeh maror. \\
   Shebe{\ch}ol haleilot, ein anu matbilin afilu p'am e{\ch}ad,
-  halailah hazeh sh'tei f'amin. \\
-  Shebe{\ch}ol haleilot, anu o{\ch}lin bein yoshvin uvein m'subin,
-  halailah hazeh \\ \strut $\quad$ kulanu m'subin.
+  halailah hazeh sh'tei f'amin.  Shebe{\ch}ol haleilot, anu o{\ch}lin bein yoshvin uvein m'subin,
+  halailah hazeh, kulanu m'subin.
 \end{HgTranslit}
 
 \vfill
@@ -487,6 +454,7 @@ world, while ``All the days of your life'' includes the time of the Messiah.
 
 \end{HgEnglish}
 
+\newpage
 \HgInst{Continue}
 
 \begin{HgEnglish}
@@ -517,7 +485,7 @@ the Lord did unto me when I came forth out of Egypt.''
 \end{myitemize}
 \end{HgEnglish}
 
-\HgInst{Continue}
+\newpage
 
 %At first our forefathers worshiped idols, but now the Omnipresent has
 %brought us near to His service, as it is written: “Joshua said to all
@@ -684,6 +652,7 @@ matzah, and the maror.
 \end{HgEnglish}\\
 
 \newpage
+
 \HgInst{Then read:}
 \begin{HgEnglish}
   \textbf{In every generation, let each one say that he himself came out of
@@ -693,22 +662,19 @@ matzah, and the maror.
 
 \HgInst{Finally, hold up the wine, and read:}
 
-\begin{multicols}{3}\raggedright
-\begin{HgHebrew} \raggedright
+\begin{multicols}{3}
+\begin{HgHebrew} \raggedleft
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
   בּוֹרֵא פְּרִי הַגָפֶן.
 \end{HgHebrew}
-
 \columnbreak
 \begin{HgTranslit}\raggedright
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.\\
 \phantom{extra line}
 \end{HgTranslit}
-
 \columnbreak
-
 \begin{HgEnglish}\raggedright
   Blessed are you, Adonai, Sovereign of the Universe,
   who creates the fruit of the vine.
@@ -717,35 +683,32 @@ matzah, and the maror.
 
 \HgInst{Drink the second cup.}
 
-\newpage
-
+\vspace*{-4mm}
 \chapter{Ra{\ch}tza: Washing the hands again}
 
 
 \HgInst{For those who wish, wash your hands, and individually recite:}
 
-\begin{HgHebrew}
+\begin{HgHebrew}\normalsize
 בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
 \\
 אֲשֶׁר קִדְשָׁנוּ בְּמִצְוֹתָיו 
-\phantom{וְצִוָּנוּ עַל נְטִילַת יָדַיִם.}
-\\
+%\phantom{וְצִוָּנוּ עַל נְטִילַת יָדַיִם.}
+%\\
 וְצִוָּנוּ עַל נְטִילַת יָדַיִם.
 \end{HgHebrew}
 
-\begin{HgTranslit}
+\begin{multicols}{2}[\columnsep=12pt]\raggedright
+\noindent
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
-  asher kidshanu b'mitzvotav, \\
-  v'tzivanu al n'tilat yadayim.
-\end{HgTranslit}
-
-\begin{HgEnglish}
+  asher kidshanu b'mitzvotav,  v'tzivanu al n'tilat yadayim.
+  
+\columnbreak
+  \noindent
   Blessed are you, Adonai, Sovereign of the Universe, \\
-  who sanctifies us with your commandments, \\
+  who sanctifies us with your commandments,
   and commands us to wash our hands.
-\end{HgEnglish}
-
-\vfill
+\end{multicols}
 
 
 \begin{HgEnglish}
@@ -755,34 +718,35 @@ the Matzah, so that they can be spoken as a single blessing.
 
 \newpage
 
-\chapter{Motzi: Blessing the bread\\Matzah: Blessing the matzah}
+\chapter{Motzi and Matzah}
 
-\vfill
+\subsection*{Blessing the bread and  blessing the matzah}
+
 
 \HgInst{Hold all three pieces of matzah, and recite:}
 
-
+\begin{raggedleft}
 \begin{HgHebrew}
 בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם
 \\
 הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ.
 \end{HgHebrew}
+\end{raggedleft}
 
-
-\begin{HgTranslit}
-  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
+\begin{multicols}{2}[\columnsep=14pt]\raggedcolumns\raggedright
+\noindent
+  Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, 
   hamotzi le{\ch}em min ha'aretz.
-\end{HgTranslit}
 
-\begin{HgEnglish}
-  Blessed are you, Adonai, Sovereign of the Universe, \\
-  who brings forth bread from the earth.\\
-\end{HgEnglish}
-
+\columnbreak\noindent
+  Blessed are you, Adonai, Sovereign of the Universe, 
+  who brings forth bread from the earth.
+\end{multicols}
 
 \HgInst{Break the top and middle matzah into pieces, and distribute them around
 the table. Continuing to hold only those pieces, read:}
 
+\begin{raggedleft}
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
   \\
@@ -791,19 +755,21 @@ the table. Continuing to hold only those pieces, read:}
   \\
   וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
 \end{HgHebrew}
-
-\begin{HgTranslit}
+\end{raggedleft}
+\begin{multicols}{2}\raggedright
+\begin{HgTranslit}\raggedright
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
-  v'tzivanu al a{\ch}ilat matzah.
+  v'tzivanu al a{\ch}ilat matzah.\\
+ \phantom{extra line}
 \end{HgTranslit}
-
-\begin{HgEnglish}
-  Blessed are you, Adonai, Sovereign of the Universe, \\
-  who sanctifies us with your commandments, \\
+\columnbreak
+\begin{HgEnglish}\raggedright
+  Blessed are you, Adonai, Sovereign of the Universe, 
+  who sanctifies us with your commandments, 
   and commands us to eat matzah.
 \end{HgEnglish}
-
+\end{multicols}
 \newpage
 
 \begin{HgEnglish}
@@ -887,6 +853,8 @@ the table. Continuing to hold only those pieces, read:}
 
 The meal is traditionally started with egg and salt water.
 \vfill
+\hfill \emph{How can you not have mock crayfish for Pesach?}
+\vfill
 
 \newpage
 \chapter{Tzafun: The hidden}
@@ -915,7 +883,7 @@ matzah to extort a gift of her choosing from the adults.
 The structure of the Passover seder appears to be
 modelled, at least in part, after a Greek symposium. At this point in the
 evening, the Greeks would begin the {\itshape epikomion}---after-dinner
-entertainment featuring drunken revelry, flute music and group sex.
+entertainment featuring drunken revelry of all sorts.
 \end{HgEnglish}
 
 
@@ -923,10 +891,10 @@ entertainment featuring drunken revelry, flute music and group sex.
 
 \chapter{Barei{\ch}: Blessing \& grace after the meal}
 
-
+\vspace*{-2mm}
 \HgInst{Pour the third cup of wine, and read:}
 
-\begin{HgHebrew}
+\begin{HgHebrew}\normalsize
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
   הַזָן אֶת הָעוֹלָם כֻּלּוֹ בְּטוּבוֹ בְּחֵן בְּחֶסֶד וּבְרַחֲמִים
@@ -952,7 +920,7 @@ entertainment featuring drunken revelry, flute music and group sex.
   v'al ye{\ch}sar lanu mazon l'olam va'ed. \\
   Ba'avur shemo hagadol, ki hu elzan um'farnes lakol \\
   umetiv lakol, ume{\ch}in mazon, l'{\ch}ol b'riotav asher bara. \\
-  Baru{\ch} ata Adonai, hazan et hakol.
+  Baru{\ch} atah Adonai, hazan et hakol.
 \end{HgTranslit}
 \begin{HgEnglish}\raggedright
   Blessed are you, Adonai, Sovereign of the Universe,
@@ -989,6 +957,7 @@ entertainment featuring drunken revelry, flute music and group sex.
 \HgInst{Drink the third cup, and pour the fourth. Fill a cup for Elijah as well.
   \\ Then open the door, and read:}
 
+\vfill
 
 \begin{HgHebrew}
   אֵלִיָהוּ הַנָבִיא, אֵלִיָהוּ הַתִּשְׁבִּי, אֵלִיָהוּ הַגִלְעָדִי 
@@ -1008,6 +977,8 @@ entertainment featuring drunken revelry, flute music and group sex.
 \end{HgEnglish}
 
 \vfill
+
+\newpage
 
 \chapter{Hallel: Songs of praise and the fourth cup}
 
@@ -1037,7 +1008,7 @@ entertainment featuring drunken revelry, flute music and group sex.
   Mele{\ch} el {\ch}ai haolamim.
 \end{HgTranslit}
 
-\vspace*{-3mm}
+\newpage
 
 \begin{HgEnglish}
   Let your name be praised forever,
@@ -1051,7 +1022,6 @@ entertainment featuring drunken revelry, flute music and group sex.
   Adonai and life of worlds.
 \end{HgEnglish}
 
-\newpage
 
 \HgInst{One more time:}
 
@@ -1060,20 +1030,18 @@ entertainment featuring drunken revelry, flute music and group sex.
 \end{HgHebrew}
 %\vspace{-1em}
 
-\begin{HgTranslit}
+\begin{multicols}{2}[\columnsep=12pt]\raggedright\noindent
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam,
   borei p'ri hagafen.
-\end{HgTranslit}
 
-
-\begin{HgEnglish}
-  Blessed are you, Lord our God, ruler of the universe,
+\columnbreak
+  Blessed are you, Adonai our God, ruler of the universe,
   who creates the fruit of the vine.
-\end{HgEnglish}
+\end{multicols}
 
 \HgInst{Drink the fourth cup.}
 
-
+\vspace*{-1mm}
 \noindent
 
 \settowidth{\versewidth}{in thanking You, Lord God-of-us}
@@ -1126,10 +1094,10 @@ Still, we would not suffice \\
 \chapter{Appendix}
 \vspace*{-1cm}
 \section*{The Seder Plate}
-
+\small
 There are six parts of the traditional seder plate. The Talmud has
 long discussion about what is and isn't suitable.
-\begin{itemize}
+\begin{myitemize}
 \item Chazeret: additional bitter herbs (often lettuce)
 \item Karpas: Green vegetables -- usually parsley, watercress or
   celery
@@ -1141,15 +1109,15 @@ long discussion about what is and isn't suitable.
   the mortar used by the Israelites in Egypt.
 \item Maror: Bitter herbs, symbolising bitterness of
   slavery. Horseradish is often used.
-\end{itemize}
+\end{myitemize}
 
 
 \noindent
-Some communities include an orange on the seder plate to symbolise
+A bowl of salt water is placed near the seder plate.  Some communities include an orange on the seder plate to symbolise
 those who have been excluded in the past.
 
-\noindent
-A bowl of salt water is placed near the seder plate.
+
+
 
 \section*{Counting the omer}
 
@@ -1173,8 +1141,8 @@ the Omer
 
 \begin{multicols}{2}
 \begin{HgTranslit}
-Shlosha asar mi yodea, \\
-Shlosha asar ani yodea.\\
+Shlosha asar, mi yodea, \\
+Shlosha asar, ani yodea.\\
 Shlosha asar midaya, \\
 Shneym asar shivtaya, \\
 Achad asar kochvaya, \\
@@ -1239,6 +1207,43 @@ my father bought for two {\itshape zuzim}. \\
 \newpage
 
 
+\begin{tabular}{l}
+\includegraphics[width=16cm]{figs/sonny-sheila-harry.jpg}\\[12pt]
+\end{tabular}
+\newpage
+\begin{tabular}{l}
+\includegraphics[width=155mm]{figs/harrycrop.pdf}\\
+\includegraphics[width=155mm]{figs/zara.jpg}\\
+\end{tabular}
+\newpage
+\begin{tabular}{c}
+\includegraphics[width=9cm]{figs/charlie}
+\end{tabular}
+
+\vfill
+{\tiny
+\paragraph*{Acknowledgments}
+
+\begin{itemize}
+\item Major  source material for this haggadah was the {\LaTeX}
+  source of the The Columbia Commune Churchill Free Haggadah, which had been
+  placed in the public domain.\\
+   \url{https://github.com/jacobandreas/haggadah}
+\item The photo on the
+  front cover is by Yoninah (Own work) [GFDL
+  (\url{http://www.gnu.org/copyleft/fdl.html}), CC-BY-SA-3.0, 
+
+  (\url{http://creativecommons.org/licenses/by-sa/3.0/}) or CC BY 2.5
+  (\url{http://creativecommons.org/licenses/by/2.5)}], via Wikimedia
+  Commons
+\end{itemize}
+
+\vfill
+\noindent
+This  haggadah is produced in {\XeLaTeX}. The English text is
+set in Charter. The Hebrew text is set in Shofar.
+}
+\newpage
 
 \end{document}
 
