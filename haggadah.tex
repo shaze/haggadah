@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{afterpage}
@@ -15,6 +11,7 @@
 \usepackage{fontspec}
 \usepackage{url}
 \usepackage{titlesec}
+\usepackage{cjhebrew}
 
 \settypeblocksize{20cm}{16cm}{*}
 % \setlrmargins{1.5cm}{*}{*}
@@ -28,47 +25,29 @@
 
 \setdefaultlanguage{english}
 
-\setotherlanguage[numerals=hebrew]{hebrew}
+\setotherlanguage[calendar=hebrew,numerals=hebrew]{hebrew}
 
 \fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
 \fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *-Regular,  BoldFont      = *-Bold]{HadasimCLM}
-\fontspec[Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/, 
-UprightFont = *-Regular,
-BoldFont = *-Bold,
-ItalicFont = *-Italic ]{Carlito}
+%\fontspec[Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/, 
+%UprightFont = *-Regular,
+%BoldFont = *-Bold,
+%ItalicFont = *-Italic ]{Carlito}
 
 
 \newfontfamily\hebrewfont[Script=Hebrew]{Hadasim CLM}
-%
-%\setmainfont{Carlito}[%
-% Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/ ,% 
-% UprightFont = *-Regular,
-% BoldFont = *-Bold,
-% ItalicFont = *-Italic ]
 
-% \setmainfont[%
-%  Path = /Users/scott/Library/Fonts/cabin/ ,% 
-%  UprightFont = Cabin-Regular.otf,
-%  BoldFont = *-Bold,
-%  ItalicFont = *-RegularItalic ]{Cabin}
-
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
-%\setmainfont[ Path =
-%/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/]{Cormorant Garamond}
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/raleway/ ,
- UprightFont = Raleway-Regular.otf,
- BoldFont = Raleway-Bold,
- ItalicFont = Raleway-Regular-Italic ] {Raleway}
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/ ,
- UprightFont = CormorantGaramond-SemiBold.otf,
- BoldFont = CormorantGaramond-Bold,
- ItalicFont = CormorantGaramond-SemiBoldItalic ] {Cormorant Garamond}
-%\setmainfont{Georgia}
+\setmainfont[ Path =\string~/Library/texmf/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
 
 
+%\setmainfont[ Path = ~/Library/texmf/fonts/opentype/catharsis/cormorantgaramond/ , UprightFont = CormorantGaramond-SemiBold.otf, BoldFont = CormorantGaramond-Bold, ItalicFont = CormorantGaramond-SemiBoldItalic ]{Cormorant Garamond}
+
+
+
+%\setmainfont[ Path =~/Library/texmf/fonts/opentype/impallari/raleway/ ]{Raleway}
+
+
+% \setmainfont{Georgia}
 %\setmainfont{Palatino}
 
 \titleformat{\chapter}[display]
@@ -119,7 +98,7 @@ ItalicFont = *-Italic ]{Carlito}
 \title{\vspace*{-4cm}Haggadah}
 
 \author{\vspace*{-1cm}Seder for the perplexed \& perplexing family}
-\date{Pesach, 5778}
+\date{}
 
 \usepackage{tocloft}
 \setlength{\cftbeforechapterskip}{.1ex}
@@ -238,6 +217,16 @@ set in Charter. The Hebrew text is set in Shofar.
 \pagenumbering{arabic}
 
 
+\chapter{Lighting the candles}
+
+The candles may be lit before the seder starts or at the start of the
+seder, according to custom.
+
+\begin{cjhebrew}\large
+  b*ArUK:  't*Ah  y:yA  'A:lhenU mElEK:  hA`OlAm\textrm{,}\\
+  'A:+sEr
+\end{cjhebrew}
+
 \chapter{Kiddush}
 
 \vspace*{-3cm}
@@ -270,7 +259,7 @@ On Shabbat
  שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמָן הַזֶּה.
 \end{HgHebrew}
 
-
+\end{document}
 \begin{HgTranslit}
 Baruch atah Adonai, Eloheinu Melech haolam,
 shehecheyanu, v'kiy'manu, v'higianu laz'man hazeh.
