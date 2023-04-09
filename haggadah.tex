@@ -2,6 +2,8 @@
 
 
 
+
+
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{afterpage}
@@ -13,7 +15,10 @@
 \usepackage{titlesec}
 \usepackage{cjhebrew}
 
-\settypeblocksize{20cm}{16cm}{*}
+
+
+
+\settypeblocksize{20cm}{155mm}{*}
 % \setlrmargins{1.5cm}{*}{*}
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
@@ -27,17 +32,28 @@
 
 \setotherlanguage[calendar=hebrew,numerals=hebrew]{hebrew}
 
-\fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
-\fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *-Regular,  BoldFont      = *-Bold]{HadasimCLM}
-%\fontspec[Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/, 
-%UprightFont = *-Regular,
-%BoldFont = *-Bold,
-%ItalicFont = *-Italic ]{Carlito}
+%\fontspec [Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,
+%UprightFont = *Regular,  BoldFont = *Demi-Bold, Extension= .ttf]{Shofar.ttf}
+\fontspec [Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,UprightFont = *-Regular,  BoldFont= *-Bold]{HadasimCLM}
 
 
-\newfontfamily\hebrewfont[Script=Hebrew]{Hadasim CLM}
 
-\setmainfont[ Path =\string~/Library/texmf/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
+
+
+
+
+
+\newfontfamily\hebrewfont[Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,
+UprightFont = *Regular,  BoldFont = *Demi-Bold, Extension= .ttf,Script=Hebrew]{Shofar}
+
+
+
+
+
+
+
+
+%\setmainfont[ Path =\string~/Library/texmf/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
 
 
 %\setmainfont[ Path = ~/Library/texmf/fonts/opentype/catharsis/cormorantgaramond/ , UprightFont = CormorantGaramond-SemiBold.otf, BoldFont = CormorantGaramond-Bold, ItalicFont = CormorantGaramond-SemiBoldItalic ]{Cormorant Garamond}
@@ -47,7 +63,7 @@
 %\setmainfont[ Path =~/Library/texmf/fonts/opentype/impallari/raleway/ ]{Raleway}
 
 
-% \setmainfont{Georgia}
+\setmainfont{Georgia}
 %\setmainfont{Palatino}
 
 \titleformat{\chapter}[display]
@@ -219,13 +235,52 @@ set in Charter. The Hebrew text is set in Shofar.
 
 \chapter{Lighting the candles}
 
-The candles may be lit before the seder starts or at the start of the
-seder, according to custom.
+The candles may be lit before sunset or  at the start of the
+seder, according to custom:
 
-\begin{cjhebrew}\large
-  b*ArUK:  't*Ah  y:yA  'A:lhenU mElEK:  hA`OlAm\textrm{,}\\
-  'A:+sEr
+\begin{verse}
+  As these candles give light to all who behold them,\\
+  so may we, by our lives, give light to all who behold us.\\
+  
+  As their brightness reminds us of the generations of Israel who have
+  kindled light,\\
+  so may we, in our own day, be among those who kindle light.\\
+  \hfill \emph{-- Mishkan T'filah}
+\end{verse}
+
+\bigskip
+
+\noindent
+If Pesach is on Shabbat:
+
+\medskip
+
+\begin{cjhebrew}\LARGE
+  b*ArUK:  't*Ah\textrm{,}  y:yA  'E:lohenU\textrm{,} mElEK:  hA`OlAm\textrm{,}\\
+  'a:+sEr qid*:+sanU  b*:mi.s:OtAyw\\
+  w:.siw*anU l:had:liyq ner +sEl +sab*at w:+sEl yOm tob\textrm{.}
 \end{cjhebrew}
+
+\bigskip
+\noindent
+Otherwise:
+
+\medskip
+\begin{cjhebrew}\LARGE
+  b*ArUK:  't*Ah\textrm{,}  y:yA  'E:lohenU\textrm{,} mElEK:  hA`OlAm\textrm{,}\\
+  'a:+sEr qid*:+sanU  b*:mi.s:OtAyw\\
+  w:.siw*anU l:had:liyq ner  +sEl yOm tob\textrm{.}
+\end{cjhebrew}
+
+\medskip
+\begin{HgTranslit}
+  Baruch atah,\\
+  Adonai Eloheinu, Melech haolam,\\
+  asher kid'shanu b'mitzvotav, \\
+  v'tzivanu l'hadlik ner\\
+  (shel Shabbat v') shel Yom Tov
+\end{HgTranslit}
+
 
 \chapter{Kiddush}
 
@@ -255,14 +310,15 @@ On Shabbat
 \paragraph*{Shehecheyanu}
 
 \begin{HgHebrew}
- בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+ בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,\\
  שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמָן הַזֶּה.
 \end{HgHebrew}
 
-\end{document}
+
 \begin{HgTranslit}
 Baruch atah Adonai, Eloheinu Melech haolam,
-shehecheyanu, v'kiy'manu, v'higianu laz'man hazeh.
+shehecheyanu, v'kiy'manu,\\
+v'higianu laz'man hazeh.
 \end{HgTranslit}
 
 \begin{HgEnglish}
@@ -331,6 +387,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
 afikoman.}
 
 \HgInst{Hold the remaining matzah up, and read:}
+
 
 \vfill
 \newpage
@@ -454,14 +511,14 @@ praiseworthy.
 %Akiva and Rabbi Tarphon were reclining [at a seder] in B'nei Berak. They were
 %discussing the exodus from Egypt all that night, until their students came and
 %told them: ``Masters! The time has come for reciting the morning Sh'ma!''
-Rabbi Eleazar ben Azariah said: I have lived to be a man of threescore years and
-ten, yet I did not understand why the story of the Exodus should be told at
-night until Ben Zoma explained it to me. He said: It is said, ``That thou mayest
-remember the day when thou camest forth out of the land of Egypt all the days of
-thy life.'' (Deuteronomy 16:3) ``The days of your life'' would have meant the
-days only, but ``all the days of your life'' includes the nights also.  The
-Sages of Israel explain it further: ``The days of your life'' refers to this
-world, while ``All the days of your life'' includes the time of the Messiah.
+%Rabbi Eleazar ben Azariah said: I have lived to be a man of threescore years and
+%ten, yet I did not understand why the story of the Exodus should be told at
+%night until Ben Zoma explained it to me. He said: It is said, ``That thou mayest
+%remember the day when thou camest forth out of the land of Egypt all the days of
+%thy life.'' (Deuteronomy 16:3) ``The days of your life'' would have meant the
+%days only, but ``all the days of your life'' includes the nights also.  The
+%Sages of Israel explain it further: ``The days of your life'' refers to this
+%world, while ``All the days of your life'' includes the time of the Messiah.
 
 \end{HgEnglish}
 
@@ -529,17 +586,37 @@ arm, and with a great manifestation, and with signs and wonders."
 seraph and not through a messenger. The Holy One, blessed be He, did
 it in His glory by Himself!
 
-Thus it is said: ``In that night I will pass through the land of Egypt,
-and I will smite every first-born in the land of Egypt, from man to
-beast, and I will carry out judgments against all the gods of Egypt, I
-the Adonai."
+\end{HgEnglish}
 
-``I will pass through the land of Egypt,'' I and not an angel; ``And I
-will smite every first-born in the land of Egypt," I and not a
-seraph. And I will carry out judgments against all the gods of Egypt," 
+\begin{HgEnglish}
+The length of time that the Israelites lived in Egypt was four hundred
+and thirty years; at the end of the four hundred and thirtieth year,
+to the very day, all the ranks of Adonai departed from the land of
+Egypt. That was for Adonai a night of vigil to bring them out of the
+land of Egypt; that same night is Adonai’s, one of vigil for all the children of Israel throughout the ages.
 \end{HgEnglish}
 
 \newpage
+
+
+\begin{HgEnglish}
+Rabbi Yonatan says: What is the meaning of that which is written in
+the passage describing the splitting of the Red Sea: “And the one came
+not near the other all the night”?
+
+At that time the angels recited a
+song of joy. The Holy One said: My handiwork -- the Egyptians -- are drowning in
+the sea, and you are reciting a song before Me? Apparently, God is not
+gladdened by the downfall of the wicked.
+
+\hfill\emph{Talmud, Sanhedrin, 39b}
+\end{HgEnglish}
+
+\noindent
+\begin{HgEnglish}
+\textbf{We spill our wine so that our pleasure during the holiday is tempered in
+  remembrance of the  suffering of the Egyptians.}
+\end{HgEnglish}
 
 
 \begin{HgEnglish}
@@ -600,7 +677,7 @@ read each plague. Don't lick your finger!}
   \end{HgHebrew}
 \end{multicols}
 
-
+\newpage
 
 \HgInst{Then read or sing:}
 
@@ -622,10 +699,6 @@ read each plague. Don't lick your finger!}
 \end{multicols}
 \end{HgEnglish}
 
-\begin{HgEnglish}
-\textbf{We spill our wine so that our pleasure during the holiday is tempered in
-  remembrance of the  suffering of the Egyptians.}
-\end{HgEnglish}
 
 \newpage
 \begin{HgEnglish}
@@ -663,9 +736,21 @@ matzah, and the maror.
 \begin{HgEnglish}
   \textbf{In every generation, let each one say that he himself came out of
   Egypt.} As it is said: ``You shall tell your child on that day, `it is because
-  of what God did for me when I left Egypt.'
+of what God did for me when I left Egypt.'
+
+  We remember that we were slaves, we who were strangers, and so we
+  remember:
+  \begin{itemize}
+  \item You shall not oppress a stranger, for you know the feelings of
+    a stranger having yourselves been strangers in the lange of
+    Egypt. When strangers reside with you in your land, you shall not
+    wrong them \ldots you shall love them as yourselves.
+  \item You shall rejoice before God with your son and daughther and
+  the stranger, and the orphan and widow in your midst.
+  \end{itemize}
 \end{HgEnglish}
 
+\newpage
 \HgInst{Finally, hold up the wine, and read:}
 
 \begin{multicols}{3}\raggedright
@@ -758,6 +843,7 @@ the Matzah, so that they can be spoken as a single blessing.
 \HgInst{Break the top and middle matzah into pieces, and distribute them around
 the table. Continuing to hold only those pieces, read:}
 
+
 \begin{HgHebrew}
   בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
   \\
@@ -767,6 +853,7 @@ the table. Continuing to hold only those pieces, read:}
   וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
 \end{HgHebrew}
 
+\begin{multicols}{2}
 \begin{HgTranslit}
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
   asher kidshanu b'mitzvotav, \\
@@ -775,9 +862,10 @@ the table. Continuing to hold only those pieces, read:}
 
 \begin{HgEnglish}
   Blessed are you, Adonai, Sovereign of the Universe, \\
-  who sanctifies us with your commandments, \\
+  who sanctifies us with your \\commandments, 
   and commands us to eat matzah.
 \end{HgEnglish}
+\end{multicols}
 
 \newpage
 
@@ -890,7 +978,7 @@ matzah to extort a gift of her choosing from the adults.
 The structure of the Passover seder appears to be
 modelled, at least in part, after a Greek symposium. At this point in the
 evening, the Greeks would begin the {\itshape epikomion}---after-dinner
-entertainment featuring drunken revelry, flute music and group sex.
+entertainment featuring drunken revelry.
 \end{HgEnglish}
 
 
@@ -986,8 +1074,11 @@ entertainment featuring drunken revelry, flute music and group sex.
 
 \chapter{Hallel: Songs of praise and the fourth cup}
 
+
+\vspace*{-3mm}
 \HgInst{Recite:}
 
+\vspace*{-2mm}
 \begin{HgHebrewl}
   יִשְׁתַּבַּח שִׁמְךָ לַָעַד מַלְכֵּנוּ,  \\
   הָאֵל הַמֶלֶךְ הַגָּדוֹל וְהַקָּדוֹשׁ בַּשָּׁמַיִם וּבַָאָרֶץ, \\
@@ -999,6 +1090,7 @@ entertainment featuring drunken revelry, flute music and group sex.
   אֵל הַהוֹדָאוֹת, אֲדוֹן הַנִפְלָאוֹת, הַבּוֹחֵר בְּשִׁירֵי זִמְרָה,  \\
   מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
 \end{HgHebrewl}
+
 
 \begin{HgTranslit}\raggedright
   Yishtaba{\ch} shim{\ch}a laad malkeinu \\
