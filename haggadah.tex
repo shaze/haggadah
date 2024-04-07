@@ -1,23 +1,26 @@
 \documentclass[12pt,a4wide,openany]{memoir}
 
 
+% Set false if Pesach is not on Shabbat to reduce the number of alternates
+\newif\ifshabbat \shabbattrue
 
-
+\date{Pesach, 5784}
 
 
 
 \usepackage{graphicx}
 \usepackage{multicol}
 \usepackage{afterpage}
-\usepackage[pagecolor=none]{pagecolor}
+\usepackage{xcolor}
+\usepackage{pagecolor}
 \usepackage{verse}
 \usepackage{polyglossia}
 \usepackage{fontspec}
 \usepackage{url}
 \usepackage{titlesec}
 
-\settypeblocksize{20cm}{16cm}{*}
-% \setlrmargins{1.5cm}{*}{*}
+\settypeblocksize{20cm}{15cm}{*}
+
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
 {\normalfont%
@@ -30,46 +33,11 @@
 
 \setotherlanguage[numerals=hebrew]{hebrew}
 
-\fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *Regular,  BoldFont      = *Demi-Bold]{Shofar}
-\fontspec [Path = /Users/scott/Library/Fonts/culmus/ ,UprightFont = *-Regular,  BoldFont      = *-Bold]{HadasimCLM}
-\fontspec[Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/, 
-UprightFont = *-Regular,
-BoldFont = *-Bold,
-ItalicFont = *-Italic ]{Carlito}
-
 
 \newfontfamily\hebrewfont[Script=Hebrew]{Hadasim CLM}
-%
-%\setmainfont{Carlito}[%
-% Path = /usr/local/texlive/2017/texmf-dist/fonts/truetype/typoland/carlito/ ,% 
-% UprightFont = *-Regular,
-% BoldFont = *-Bold,
-% ItalicFont = *-Italic ]
 
-% \setmainfont[%
-%  Path = /Users/scott/Library/Fonts/cabin/ ,% 
-%  UprightFont = Cabin-Regular.otf,
-%  BoldFont = *-Bold,
-%  ItalicFont = *-RegularItalic ]{Cabin}
+\setmainfont{Georgia}
 
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/quattrocento/ ]{Quattrocento}
-%\setmainfont[ Path =
-%/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/]{Cormorant Garamond}
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/impallari/raleway/ ,
- UprightFont = Raleway-Regular.otf,
- BoldFont = Raleway-Bold,
- ItalicFont = Raleway-Regular-Italic ] {Raleway}
-\setmainfont[ Path =
-/usr/local/texlive/2017//texmf-dist/fonts/opentype/catharsis/cormorantgaramond/ ,
- UprightFont = CormorantGaramond-SemiBold.otf,
- BoldFont = CormorantGaramond-Bold,
- ItalicFont = CormorantGaramond-SemiBoldItalic ] {Cormorant Garamond}
-%\setmainfont{Georgia}
-
-
-%\setmainfont{Palatino}
 
 \titleformat{\chapter}[display]
 {\normalfont%
@@ -119,13 +87,18 @@ ItalicFont = *-Italic ]{Carlito}
 \title{\vspace*{-4cm}Haggadah}
 
 \author{\vspace*{-1cm}Seder for the perplexed \& perplexing family}
-\date{Pesach, 5778}
 
-\usepackage{tocloft}
+
+
 \setlength{\cftbeforechapterskip}{.1ex}
 %\setlrmargins{2cm}
+
+
 \begin{document}
-\frontmatter
+
+\frontmatter    
+
+
 \newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
 \pagenumbering{roman}
 \maketitle
@@ -231,6 +204,7 @@ set in Charter. The Hebrew text is set in Shofar.
 \newpage
 
 
+\selectlanguage*{english}
 \tableofcontents*
 
 \newpage
@@ -240,6 +214,7 @@ set in Charter. The Hebrew text is set in Shofar.
 
 \chapter{Kiddush}
 
+\ifshabbat
 \vspace*{-3cm}
 
 \noindent
@@ -253,6 +228,7 @@ On Shabbat
 \end{center}
 
 \newpage
+\fi
 \HgInst{Pour the first cup of wine, and read:}
 
 \begin{tabular}{r}
@@ -265,10 +241,12 @@ On Shabbat
 
 \paragraph*{Shehecheyanu}
 
-\begin{HgHebrew}
+
+\begin{hebrew}
  בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
  שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמָן הַזֶּה.
-\end{HgHebrew}
+\end{hebrew}
+
 
 
 \begin{HgTranslit}
@@ -286,7 +264,7 @@ for giving us life, sustaining us, and enabling us to reach this season.
 
 \vfill
 
-
+\newpage
 \chapter{Ur{\ch}atz: Washing the hands}
 
 
@@ -309,16 +287,16 @@ for giving us life, sustaining us, and enabling us to reach this season.
 \vfill
 
 \HgInst{Distribute the karpas, and dip them in saltwater.}
-
 \begin{HgHebrew}
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
   \\
-  בּוֹרֵא פְּרִי הָאֲדָמָה.
+  בּוֹרֵא פְּרִי הָאֲדָמָה.
 
 %ברוך אתה יי אלהינו מלך העולם, 
 %  \\
 %  בורא פרי האדמה.
 \end{HgHebrew}
+
 
 \begin{HgTranslit}
   Baru{\ch} atah Adonai, eloheinu mele{\ch} ha'olam, \\
@@ -359,19 +337,19 @@ afikoman.}
 \end{HgEnglish}
 
 \begin{HgHebrew}
-  הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
+  הָא לַחְמָא עַנְיָא דִּי אֲכָלוּ אַבְהָתָנָא
   \\
-  בְּאַרְעָא דְמִצְרָיִם.
+  בְּאַרְעָא דְמִצְרָיִם.
   \\
-  כָּל דִּכְפִין יֵיתֵי וְיֵכוֹל,
+  כָּל דִּכְפִין יֵיתֵי וְיֵכוֹל,
   \\
-  כָּל דִּצְרִיךְ יֵיתֵי וְיִפְסַח. 
+  כָּל דִּצְרִיךְ יֵיתֵי וְיִפְסַח. 
   \\
-  הָשַּׁתָּא הָכָא,
-  לְשָׁנָה הַבָּאָה בְּאַרְעָא דְיִשְׂרָאֵל.
+  הָשַּׁתָּא הָכָא,
+  לְשָׁנָה הַבָּאָה בְּאַרְעָא דְיִשְׂרָאֵל.
   \\
-  הָשַּׁתָּא עַבְדֵי,
-  לְשָׁנָה הַבָּאָה בְּנֵי חוֹרִין.
+  הָשַּׁתָּא עַבְדֵי,
+  לְשָׁנָה הַבָּאָה בְּנֵי חוֹרִין.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -384,7 +362,9 @@ afikoman.}
   Hashata avdei, %\\
   l'shanah haba'ah b'nei {\ch}orin.
 \end{HgTranslit}
-
+\begin{HgHebrew}
+% THis is included as a bug fix -- without it the TOC is wrong
+\end{HgHebrew}
 
 \vfill
 
@@ -394,7 +374,7 @@ afikoman.}
 
 \newpage
 
-\chapter{Magid: The Passover story}
+\chapter{ Magid:\ The\ Passover\ story}
 
 \subsubsection*{The  four questions.}
 
@@ -414,23 +394,23 @@ afikoman.}
 \end{HgEnglish}
 
 \begin{HgHebrew}
-מַה נִּשְּׁתַּנָה הַלַּיְלָה הַזֶּה מִכָּל הַלֵּילוֹת? 
+מַה נִּשְּׁתַּנָה הַלַּיְלָה הַזֶּה מִכָּל הַלֵּילוֹת? 
 \\
-שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין חָמֵץ וּמַצָּה,
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין חָמֵץ וּמַצָּה,
 %\\
-הַלַּיְלָה הַזֶּה כּוּלוֹ מַצָּה. 
+הַלַּיְלָה הַזֶּה כּוּלוֹ מַצָּה. 
 \\
-שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין שְׁאָר יְרָקוֹת,
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין שְׁאָר יְרָקוֹת,
 %\\
-הַלַּיְלָה הַזֶּה מָרוֹר. 
+הַלַּיְלָה הַזֶּה מָרוֹר. 
 \\
-שֶׁבְּכָל הַלֵּילוֹת אֵין אֶנוּ מַטְבִּילִין אֲפִילוּ פַּעַם אֶחָת, 
+שֶׁבְּכָל הַלֵּילוֹת אֵין אֶנוּ מַטְבִּילִין אֲפִילוּ פַּעַם אֶחָת, 
 %\\
-הַלַּיְלָה הַזֶּה שְׁתֵּי פְעָמִים. 
+הַלַּיְלָה הַזֶּה שְׁתֵּי פְעָמִים. 
 \\
-שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין בֵּין יוֹשְׁבִין וּבֵין מְסֻבִּין, 
+שֶׁבְּכָל הַלֵּילוֹת אָנוּ אוֹכְלִין בֵּין יוֹשְׁבִין וּבֵין מְסֻבִּין, 
 %\\
-הַלַּיְלָה הַזֶּה כֻּלָנו מְסֻבִּין. 
+הַלַּיְלָה הַזֶּה כֻּלָנו מְסֻבִּין. 
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -444,9 +424,14 @@ afikoman.}
   Shebe{\ch}ol haleilot, anu o{\ch}lin bein yoshvin uvein m'subin,
   halailah hazeh \\ \strut $\quad$ kulanu m'subin.
 \end{HgTranslit}
+\begin{HgHebrew}
+% THis is included as a bug fix -- without it the TOC is wrong
+\end{HgHebrew}
 
+\begin{HgHebrew}
+% THis is included as a bug fix -- without it the TOC is wrong
+\end{HgHebrew}
 \vfill
-
 \newpage
 
 \HgInst{Uncover the matzah, and read:}
@@ -589,26 +574,29 @@ read each plague. Don't lick your finger!}
 \columnbreak
   \begin{HgHebrew}
 \noindent
-  דָּם 
+  דָּם 
   \\
-  צְפֵרְדֵּעַ 
+  צְפֵרְדֵּעַ 
   \\
-  כִּנִים 
+  כִּנִים 
   \\
   עָרוֹב 
   \\
-  דֶּבֶר 
+  דֶּבֶר 
   \\
-  שְׁחִין 
+  שְׁחִין 
   \\
-  בָּרד
+  בָּרד
   \\
-  אַרְבֶּה 
+  אַרְבֶּה 
   \\
-  חשֶׁךְ 
+  חשֶׁךְ 
   \\
-  מַכַּת בְּכוֹרוֹת 
+  מַכַּת בְּכוֹרוֹת 
   \end{HgHebrew}
+  \begin{HgHebrew}
+% THis is included as a bug fix -- without it the TOC is wrong
+\end{HgHebrew}
 \end{multicols}
 
 
@@ -680,11 +668,13 @@ matzah, and the maror.
 \HgInst{Finally, hold up the wine, and read:}
 
 \begin{multicols}{3}\raggedright
+
 \begin{HgHebrew} \raggedright
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
-  בּוֹרֵא פְּרִי הַגָפֶן.
+  בּוֹרֵא פְּרִי הַגָפֶן.
 \end{HgHebrew}
+\begin{HgHebrew}\end{HgHebrew}
 
 \columnbreak
 \begin{HgTranslit}\raggedright
@@ -705,18 +695,19 @@ matzah, and the maror.
 
 \newpage
 
+\selectlanguage*{english}
 \chapter{Ra{\ch}tza: Washing the hands again}
 
 
 \HgInst{For those who wish, wash your hands, and individually recite:}
 
 \begin{HgHebrew}
-בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
 \\
-אֲשֶׁר קִדְשָׁנוּ בְּמִצְוֹתָיו 
-\phantom{וְצִוָּנוּ עַל נְטִילַת יָדַיִם.}
+אֲשֶׁר קִדְשָׁנוּ בְּמִצְוֹתָיו 
+\phantom{וְצִוָּנוּ עַל נְטִילַת יָדַיִם.}
 \\
-וְצִוָּנוּ עַל נְטִילַת יָדַיִם.
+וְצִוָּנוּ עַל נְטִילַת יָדַיִם.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -741,15 +732,15 @@ the Matzah, so that they can be spoken as a single blessing.
 
 \newpage
 
-\chapter{Motzi: Blessing the bread\\Matzah: Blessing the matzah}
+\chapter{Motzi and Matzah: Blessing the bread and matzah}
 
-\vfill
+
 
 \HgInst{Hold all three pieces of matzah, and recite:}
 
 
 \begin{HgHebrew}
-בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם
+בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם
 \\
 הַמּוֹצִיא לֶחֶם מִן הָאָרֶץ.
 \end{HgHebrew}
@@ -770,12 +761,12 @@ the Matzah, so that they can be spoken as a single blessing.
 the table. Continuing to hold only those pieces, read:}
 
 \begin{HgHebrew}
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,
   \\
-  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו
-  \phantom{וְצִוָּנוּ עַל אֲכִילַת מַצָּה.}
+  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו
+  \phantom{וְצִוָּנוּ עַל אֲכִילַת מַצָּה.}
   \\
-  וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
+  וְצִוָּנוּ עַל אֲכִילַת מַצָּה.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -827,9 +818,9 @@ the table. Continuing to hold only those pieces, read:}
 
 
 \begin{HgHebrew}
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם, 
   \\
-  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו וְצִוָּנוּ 
+  אֲשֶׁר קִדְּשָנוּ בְּמִצְוֹתָיו וְצִוָּנוּ 
   \phantom{עַל אֲכִילַת מָרוֹר.}
   \\
   עַל אֲכִילַת מָרוֹר.
@@ -913,21 +904,21 @@ entertainment featuring drunken revelry, flute music and group sex.
 \HgInst{Pour the third cup of wine, and read:}
 
 \begin{HgHebrew}
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
-  הַזָן אֶת הָעוֹלָם כֻּלּוֹ בְּטוּבוֹ בְּחֵן בְּחֶסֶד וּבְרַחֲמִים
+  הַזָן אֶת הָעוֹלָם כֻּלּוֹ בְּטוּבוֹ בְּחֵן בְּחֶסֶד וּבְרַחֲמִים
   \\
-  הוּא נוֹתֵן לֶחֶם לְכָל בָּשָׂר כִּי לְעוֹלָם חַסְדוֹ. 
+  הוּא נוֹתֵן לֶחֶם לְכָל בָּשָׂר כִּי לְעוֹלָם חַסְדוֹ. 
   \\
-  וּבְטוּבוֹ הַגָדוֹל תָּמִיד לֹא חָסַר לָנוּ, 
+  וּבְטוּבוֹ הַגָדוֹל תָּמִיד לֹא חָסַר לָנוּ, 
   \\
   וְאַל יֶחְסַר לָנוּ מָזוֹן לְעוֹלָם וָעֶד. 
   \\
-  בַּעֲבוּר שְׁמוֹ הַגָּדוֹל, כִּי הוּא אֵל זָן וּמְפַרְנֵס לַכֹּל 
+  בַּעֲבוּר שְׁמוֹ הַגָּדוֹל, כִּי הוּא אֵל זָן וּמְפַרְנֵס לַכֹּל 
   \\
-  וּמֵטִיב לַכֹּל, וּמֵכִין מָזוֹן לְכָל בְּרִיּוֹתָיו אֲשֶׁר בָּרָא. 
+  וּמֵטִיב לַכֹּל, וּמֵכִין מָזוֹן לְכָל בְּרִיּוֹתָיו אֲשֶׁר בָּרָא. 
   \\
-  בָּרוּךְ אַתָּה יי הַזָן אֶת הַכֹּל.
+  בָּרוּךְ אַתָּה יי הַזָן אֶת הַכֹּל.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -956,9 +947,9 @@ entertainment featuring drunken revelry, flute music and group sex.
 \vfill
 
 \begin{HgHebrew} 
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם 
   \\
-  בּוֹרֵא פְּרִי הַגָפֶן.
+  בּוֹרֵא פְּרִי הַגָפֶן.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -977,9 +968,9 @@ entertainment featuring drunken revelry, flute music and group sex.
 
 
 \begin{HgHebrew}
-  אֵלִיָהוּ הַנָבִיא, אֵלִיָהוּ הַתִּשְׁבִּי, אֵלִיָהוּ הַגִלְעָדִי 
+  אֵלִיָהוּ הַנָבִיא, אֵלִיָהוּ הַתִּשְׁבִּי, אֵלִיָהוּ הַגִלְעָדִי 
   \\
-  בִּמְהֵרָה יָבוֹא אֵלֵינוּ עִם מָשִׁיחַ בֶּן דָוִד.
+  בִּמְהֵרָה יָבוֹא אֵלֵינוּ עִם מָשִׁיחַ בֶּן דָוִד.
 \end{HgHebrew}
 
 \begin{HgTranslit}
@@ -1000,14 +991,14 @@ entertainment featuring drunken revelry, flute music and group sex.
 \HgInst{Recite:}
 
 \begin{HgHebrewl}
-  יִשְׁתַּבַּח שִׁמְךָ לַָעַד מַלְכֵּנוּ,  \\
-  הָאֵל הַמֶלֶךְ הַגָּדוֹל וְהַקָּדוֹשׁ בַּשָּׁמַיִם וּבַָאָרֶץ, \\
-  כִּי לְךָ נָאֶה, יי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ ,  \\
-  שִׁיר וּשְׁבָחָה, הַלֵּל וְזִמְרָה, עֹז וּמֶמְשָׁלָה, נֶצַח,  \\
-  גְּדֻלָּה וּגְבוּרָה, תְּהִלָה וְתִפְאֶרֶת, קְדֻשָּׁה וּמַלְכוּת, \\
-  בְּרָכוֹת וְהוֹדָאוֹת מֵעַתָּה וְעַד עוֹלָם.  \\
-  בָּרוּךְ אַתָּה יי , אֵל מֶלֶךְ גָּדוֹל בַּתִּשְׁבָּחוֹת,  \\
-  אֵל הַהוֹדָאוֹת, אֲדוֹן הַנִפְלָאוֹת, הַבּוֹחֵר בְּשִׁירֵי זִמְרָה,  \\
+  יִשְׁתַּבַּח שִׁמְךָ לַָעַד מַלְכֵּנוּ,  \\
+  הָאֵל הַמֶלֶךְ הַגָּדוֹל וְהַקָּדוֹשׁ בַּשָּׁמַיִם וּבַָאָרֶץ, \\
+  כִּי לְךָ נָאֶה, יי אֱלֹהֵינוּ וֵאלֹהֵי אֲבוֹתֵינוּ ,  \\
+  שִׁיר וּשְׁבָחָה, הַלֵּל וְזִמְרָה, עֹז וּמֶמְשָׁלָה, נֶצַח,  \\
+  גְּדֻלָּה וּגְבוּרָה, תְּהִלָה וְתִפְאֶרֶת, קְדֻשָּׁה וּמַלְכוּת, \\
+  בְּרָכוֹת וְהוֹדָאוֹת מֵעַתָּה וְעַד עוֹלָם.  \\
+  בָּרוּךְ אַתָּה יי , אֵל מֶלֶךְ גָּדוֹל בַּתִּשְׁבָּחוֹת,  \\
+  אֵל הַהוֹדָאוֹת, אֲדוֹן הַנִפְלָאוֹת, הַבּוֹחֵר בְּשִׁירֵי זִמְרָה,  \\
   מֶלֶךְ אֵל חֵי הָעוֹלָמִים. 
 \end{HgHebrewl}
 
@@ -1042,7 +1033,7 @@ entertainment featuring drunken revelry, flute music and group sex.
 \HgInst{One more time:}
 
 \begin{HgHebrew} 
-  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָפֶן.
+  בָּרוּךְ אַתָּה יי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם בּוֹרֵא פְּרִי הַגָפֶן.
 \end{HgHebrew}
 %\vspace{-1em}
 
@@ -1062,7 +1053,7 @@ entertainment featuring drunken revelry, flute music and group sex.
 
 \noindent
 
-\settowidth{\versewidth}{in thanking You, Lord God-of-us}
+\settowidth{\versewidth}{In thanking You, Lord God-of-us}
 \begin{verse}[\versewidth]
 Were it our mouths were filled \\
 \vin with a singing like the sea, \\
@@ -1087,7 +1078,7 @@ Still, we would not suffice \\
 \vfill
 
 \begin{HgHebrew}
-  לְשָׁנָה הַבָּאָה בִּירוּשַָׁלָיִם!
+  לְשָׁנָה הַבָּאָה בִּירוּשַָׁלָיִם!
   \vspace{-1em}
 \end{HgHebrew}
 
