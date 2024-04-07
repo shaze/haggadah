@@ -1,4 +1,4 @@
-\documentclass[12pt,a4wide,openany]{memoir}
+\documentclass[12pt,openany]{memoir}
 
 
 
@@ -15,9 +15,16 @@
 \usepackage{titlesec}
 \usepackage{cjhebrew}
 
+\chapterstyle{veelo}
+\setsecheadstyle{\bfseries\sffamily}   
+\setsubsecheadstyle{\bfseries\sffamily}
 
 
-
+\makeatletter
+\g@addto@macro\chapnamefont{\sffamily} 
+\g@addto@macro\chapnumfont{\sffamily}  
+\g@addto@macro\chaptitlefont{\sffamily}
+\makeatother
 \settypeblocksize{20cm}{155mm}{*}
 % \setlrmargins{1.5cm}{*}{*}
 \usepackage{titlesec}
@@ -34,7 +41,7 @@
 
 %\fontspec [Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,
 %UprightFont = *Regular,  BoldFont = *Demi-Bold, Extension= .ttf]{Shofar.ttf}
-\fontspec [Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,UprightFont = *-Regular,  BoldFont= *-Bold]{HadasimCLM}
+%\fontspec [Path = /Users/scott/Library/texmf/fonts/truetype/culmus/ ,UprightFont = *-Regular,  BoldFont= *-Bold]{HadasimCLM}
 
 
 
@@ -63,8 +70,8 @@ UprightFont = *Regular,  BoldFont = *Demi-Bold, Extension= .ttf,Script=Hebrew]{S
 %\setmainfont[ Path =~/Library/texmf/fonts/opentype/impallari/raleway/ ]{Raleway}
 
 
-\setmainfont{Georgia}
-%\setmainfont{Palatino}
+%\setmainfont{Georgia}
+\setmainfont{Palatino}
 
 \titleformat{\chapter}[display]
 {\normalfont%
@@ -111,14 +118,17 @@ UprightFont = *Regular,  BoldFont = *Demi-Bold, Extension= .ttf,Script=Hebrew]{S
         \setlength{\itemsep}{-2pt}}%
 {\protect\end{enumerate}}
 
-\title{\vspace*{-4cm}Haggadah}
+\title{\vspace*{-4cm}\sffamily Haggadah}
 
-\author{\vspace*{-1cm}Seder for the perplexed \& perplexing family}
+\author{\vspace*{-1cm}\sffamily Seder for the perplexed \& perplexing family}
 \date{}
 
 \usepackage{tocloft}
 \setlength{\cftbeforechapterskip}{.1ex}
-%\setlrmargins{2cm}
+
+
+% \setlrmargins{2cm}
+
 \begin{document}
 \frontmatter
 \newpagecolor{red!75!green!50!blue!25}\afterpage{\restorepagecolor}
@@ -172,7 +182,7 @@ set in Charter. The Hebrew text is set in Shofar.
 \newpage
 
 
-\chapter{The Passover seder}
+\textbf{\Large \sffamily The Passover seder}
 
 \vfill
 
@@ -284,7 +294,6 @@ Otherwise:
 
 \chapter{Kiddush}
 
-\vspace*{-3cm}
 
 \noindent
 On Shabbat
@@ -309,7 +318,7 @@ On Shabbat
 
 \paragraph*{Shehecheyanu}
 
-\begin{HgHebrew}
+\begin{HgHebrew}\large
  בָּרוּךְ אַתָּה אֲדֹנָי אֱלֹהֵינוּ מֶלֶךְ הָעוֹלָם,\\
  שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמָן הַזֶּה.
 \end{HgHebrew}
@@ -395,7 +404,7 @@ afikoman.}
   \textbf{
   This is the bread of affliction that our ancestors ate
   in the land of Egypt.
-  }
+  }\\
   All who are hungry, come and eat; \\
   all who are needy, come and celebrate the Passover. \\
   Now we are here;
@@ -433,6 +442,13 @@ afikoman.}
 
 
 \vfill
+\noindent
+``All who are hungry\ldots '' may be literal, reminding us of our duty
+to seek justice for others. But, it may also be be thought of
+figuratively, as an invitation to everyone around the table in need of
+spiritual  sustenance.
+
+\vfill
 
 \HgInst{Pour (but not drink!) the second cup of wine.}
 
@@ -442,7 +458,8 @@ afikoman.}
 
 \chapter{Magid: The Passover story}
 
-\subsubsection*{The  four questions.}
+\noindent
+\textbf{\large The  four questions.}
 
 \vfill
 
@@ -682,21 +699,19 @@ read each plague. Don't lick your finger!}
 \HgInst{Then read or sing:}
 
 \begin{HgEnglish}
-\begin{multicols}{2}
   Had he only brought us out of Egypt, and not judged them, dayenu \\ (it would
   have been enough)!
   Had he only judged them, and not their idols, dayenu!\\
   Had he only destroyed their idols, and not their first-born, dayenu!\\
   Had he only destroyed their first-born, and not given us their wealth, dayenu!\\
-  %Had he only given us their wealth, and not split the sea for us, dayenu!\\
-  %Had he only split the sea for us, and not taken us through on dry land, dayenu!\\
-  %Had he only taken us through, and not drowned our oppressors, dayenu!\\
+  Had he only given us their wealth, and not split the sea for us, dayenu!\\
+  ad he only split the sea for us, and not taken us through on dry land, dayenu!\\
+  Had he only taken us through, and not drowned our oppressors, dayenu!\\
   \HgEllipsis\\
   Had he only given us the sabbath, and not brought us to Mount Sinai, dayenu!\\
   Had he only brought us to Mount Sinai, and not given us the Torah, dayenu!\\
   Had he only given us the Torah, and not brought us into Israel, dayenu!\\
   Had he only given us the Torah, and not built the temple for us, dayenu!
-\end{multicols}
 \end{HgEnglish}
 
 
@@ -1145,10 +1160,10 @@ entertainment featuring drunken revelry.
 
 \settowidth{\versewidth}{in thanking You, Lord God-of-us}
 \begin{verse}[\versewidth]
-Were it our mouths were filled \\
+Were  our mouths  filled \\
 \vin with a singing like the sea, \\
 Our tongues awash with song, \\
-\vin as waves-countless, \\
+\vin as waves --- countless, \\
 And our lips to lauding, \\
 \vin as the skies are wide, \\
 And our eyes illumined \\
@@ -1185,7 +1200,71 @@ Still, we would not suffice \\
 \begin{center}
   The End
 \end{center}
+
+
 \newpage
+
+\chapter{Counting the omer: from the second night}
+
+Counting of the Omer is done each night between Pesach and
+Shavuot.  These two days were pilgrimage festivals, with the first
+being associated with the barley harvest and the latter with the wheat
+harvest -- an \emph{omer} is a measure of grain, usually barley. This
+is the commandment:
+
+\begin{verse}
+And from the day on which you bring the sheaf of elevation
+offering—\\
+the day after the sabbath—you shall count off seven
+weeks.\\
+They must be complete: you must count until the day after the
+seventh week—fifty days; \\
+then you shall bring an offering of new grain
+to Adonai.\\
+\hfill-- \emph{Leviticus, 23:15-16}
+\end{verse}
+
+\noindent
+Counting of the Omer may have been an important ritual for an
+agricultural society, for which the success the crops
+was very important. Later this period between Pesach and Shavuot was associated with
+the start of the transition  from being slaves to free
+people. We  mark each day to remember the process.  
+Pesach to Shavuot.
+
+\medskip
+
+\HgInst{Say the blessing.}
+
+\begin{cjhebrew}\LARGE
+  b*ArUK:  't*Ah\textrm{,}  y:yA  'E:lohenU\textrm{,} mElEK:  hA`OlAm\textrm{,}\\
+  'a:+sEr qid*:+sanU  b*:mi.s:OtAyw\\
+  w:.siw*anU `la s:pirat ha`omEr\textrm{.}
+\end{cjhebrew}
+
+\begin{HgTranslit}
+Baruch atah Adonai Eloheinu melech ha’olam asher kid’shanu b’mitzvotav
+vitzivanu \\al sefirat ha’omer.
+\end{HgTranslit}
+
+\begin{HgEnglish}
+Blessed are You, Adonai our God, Ruler of the universe, who sanctifies
+us with mitzvot, and commands us concerning the counting of the Omer.
+\end{HgEnglish}
+
+\HgInst{And then, mark the counting -- only from the second night of Pesach:}
+
+\begin{HgEnglish} \centering
+  \textbf{Today is the first day of the Omer.}
+\end{HgEnglish}
+
+\medskip
+\noindent
+(For subsequent nights, use the pattern ``Today is the third day of
+the Omer'' or ``Today is the 17th day of the Omer, making two weeks
+and three days''.)
+
+
 
 \appendix
 
@@ -1218,21 +1297,7 @@ those who have been excluded in the past.
 \noindent
 A bowl of salt water is placed near the seder plate.
 
-\section*{Counting the omer}
 
-\HgInst{Recited from the second night of Pesach for 49 nights}
-
-\begin{HgTranslit}
-Baruch atah Adonai Eloheinu melech ha’olam asher kid’shanu b’mitzvotav vitzivanu al sefirat ha’omer.
-\end{HgTranslit}
-
-\begin{HgEnglish}
-Blessed are You, Adonai our God, Ruler of the universe, who sanctifies
-us with mitzvot, and commands us concerning the counting of the Omer.
-
-Today is \emph{x} days, which is \emph{y} weeks and \emph{z} days of
-the Omer
-\end{HgEnglish}
 
 \newpage
 
